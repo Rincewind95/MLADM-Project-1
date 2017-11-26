@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb25bedc-b736-4197-a6c2-6144b6348ef0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/graph_generator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algo.py" afterPath="$PROJECT_DIR$/algo.py" />
     </list>
@@ -17,11 +18,27 @@
       <file leaf-file-name="algo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+            <state relative-caret-position="83">
+              <caret line="237" column="22" lean-forward="true" selection-start-line="237" selection-start-column="22" selection-end-line="237" selection-end-column="22" />
               <folding>
                 <element signature="e#305#323#0" expanded="true" />
                 <element signature="e#643#1483#0" expanded="false" />
+                <element signature="e#1539#2334#0" expanded="false" />
+                <element signature="e#2367#3021#0" expanded="false" />
+                <element signature="e#3710#4040#0" expanded="false" />
+                <element signature="e#4072#4473#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/graph_generator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#305#323#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -29,11 +46,22 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Deg</find>
       <find>node_cnt</find>
       <find>len(G</find>
+      <find>Ccard</find>
+      <find>G</find>
+      <find>reverse_mapping</find>
+      <find>CP_t</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -42,6 +70,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/graph_generator.py" />
         <option value="$PROJECT_DIR$/algo.py" />
       </list>
     </option>
@@ -170,28 +199,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>273</line>
+          <line>331</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>259</line>
-          <option name="timeStamp" value="85" />
+          <line>322</line>
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>182</line>
-          <option name="timeStamp" value="90" />
+          <line>169</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>109</line>
-          <option name="timeStamp" value="96" />
+          <line>224</line>
+          <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>58</line>
-          <option name="timeStamp" value="98" />
+          <line>226</line>
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -201,7 +230,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="99" />
+      <option name="time" value="108" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -213,6 +242,10 @@
           <folding>
             <element signature="e#305#323#0" expanded="true" />
             <element signature="e#643#1483#0" expanded="false" />
+            <element signature="e#1539#2334#0" expanded="false" />
+            <element signature="e#2367#3021#0" expanded="false" />
+            <element signature="e#3710#4040#0" expanded="false" />
+            <element signature="e#4072#4473#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -297,13 +330,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/sortedcontainers/sortedset.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#305#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="65" column="25" lean-forward="true" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+        <state relative-caret-position="83">
+          <caret line="237" column="22" lean-forward="true" selection-start-line="237" selection-start-column="22" selection-end-line="237" selection-end-column="22" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
             <element signature="e#643#1483#0" expanded="false" />
+            <element signature="e#1539#2334#0" expanded="false" />
+            <element signature="e#2367#3021#0" expanded="false" />
+            <element signature="e#3710#4040#0" expanded="false" />
+            <element signature="e#4072#4473#0" expanded="false" />
           </folding>
         </state>
       </provider>

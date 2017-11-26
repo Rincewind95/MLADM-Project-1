@@ -43,20 +43,100 @@ def fancy_dendrogram(*args, **kwargs):
             plt.axhline(y=max_d, c='k')
     return ddata
 
+
+def fancy_plot(n, merge_order, reverse_mapping):
+    dendomatrix = []
+    oldtonewset = dict()
+    currnew = n
+    for (a, b, sigma) in merge_order:
+        newa = a
+        newb = b
+        if a in oldtonewset:
+            newa = oldtonewset[a]
+        if b in oldtonewset:
+            newb = oldtonewset[b]
+
+        if newa < newb:
+            dendomatrix.append([newa, newb, currnew, sigma])
+        else:
+            dendomatrix.append([newb, newa, currnew, sigma])
+
+        oldtonewset[a] = currnew
+        currnew += 1
+
+    fig = plt.figure(figsize=(25, 10))
+    fancy_dendrogram(
+        dendomatrix,
+        truncate_mode='lastp',
+        p=30,
+        leaf_rotation=0.,
+        leaf_font_size=12.,
+        show_contracted=True,
+        annotate_above=40,
+        max_d=170,
+    )
+    #dn = dendrogram(dendomatrix)
+    plt.show()
+    return
+
+
 def load_graph(location):
     data = np.genfromtxt(location, skip_header=1, dtype=int)
     G = dict()
+    points = SortedSet()
     for c in data:
-        x = c[0]-1
-        y = c[1]-1
+        x = c[0]
+        y = c[1]
+        points.add(x)
+        points.add(y)
+    n = len(points)
+    mapping = dict()
+    reverse_mapping = dict()
+    for i in range(n):
+        mapping[points[i]] = i
+        reverse_mapping[i] = points[i]
+
+    for c in data:
+        x = mapping[c[0]]
+        y = mapping[c[1]]
         if not x in G:
-            G[x] = []
-        G[x].append(y)
-    return G
+            G[x] = SortedSet()
+        if not y in G:
+            G[y] = SortedSet()
+        G[x].add(y)
+        G[y].add(x)
+    for x in range(n):
+        G[x].add(x)
+    return (G, n, reverse_mapping)
 
+def get_sparse_identity(n):
+    # artificially modify G to have 'self-loops'
+    indices = []
+    indexptr = [0]
+    data = []
+    for curr in range(n):
+        indices.append(curr)
+        data.append(1.0)
+        indexptr.append(len(indices))
 
-def exp_squaring(P, t, node_cnt):
-    R = np.identity(node_cnt, dtype='float')
+    S = csr_matrix((data, indices, indexptr), dtype=float)
+    return S
+
+def get_sparse_D(n, Deg):
+    # artificially modify G to have 'self-loops'
+    indices = []
+    indexptr = [0]
+    data = []
+    for curr in range(n):
+        indices.append(curr)
+        data.append(1.0 / sqrt(Deg[curr]+1))
+        indexptr.append(len(indices))
+
+    S = csr_matrix((data, indices, indexptr), dtype=float)
+    return S
+
+def exp_squaring(P, t, n):
+    R = get_sparse_identity(n) # np.identity(node_cnt, dtype='float')
     if t == 0:
         return R
     else:
@@ -70,51 +150,26 @@ def exp_squaring(P, t, node_cnt):
                 t = (t - 1) / 2
         return P * R
 
-def get_P_t(G, t):
+def get_P_t(Gself, t, n):
     # artificially modify G to have 'self-loops'
-    maxidx = 0
-    Gnew = dict()
-    for v1 in G.keys():
-        if v1 > maxidx:
-            maxidx = v1
-        added = False
-        Gnew[v1] = []
-        for v2 in G[v1]:
-            if v2 > maxidx:
-                maxidx = v2
-            if v2 == v1:
-                added = True
-            elif v2 > v1:
-                if not added:
-                    Gnew[v1].append(v1)
-                    added = True
-            Gnew[v1].append(v2)
-        if not added:
-            Gnew[v1].append(v1)
-    maxidx = maxidx + 1
     indices = []
     indexptr = [0]
     data = []
-    for curr in range(maxidx):
-        if not curr in Gnew.keys():
-            indices.append(0)
-            data.append(0.0)
-            indexptr.append(len(indices))
-            continue
-        neig_cnt = len(Gnew[curr])
-        for neig in Gnew[curr]:
+    for curr in range(n):
+        neig_cnt = len(Gself[curr])
+        for neig in Gself[curr]:
             indices.append(neig)
             data.append(1.0/neig_cnt)
         indexptr.append(len(indices))
 
     P = csr_matrix((data, indices, indexptr), dtype=float)
-    P = exp_squaring(P, t, maxidx)
-    return (P, maxidx)
+    P = exp_squaring(P, t, n)
+    return P
 
 def get_r2_C1C2(D, P_t_C1, P_t_C2):
-    r = D * P_t_C1 - D * P_t_C2
+    r = P_t_C1 * D - P_t_C2 * D
     res = 0
-    for elem in r:
+    for elem in r.data:
         res += elem*elem
     return res
 
@@ -145,15 +200,14 @@ def add_elem(sigma_to_C1C2, C1C2_to_sigma, newkey, newsigma):
     sigma_to_C1C2[newsigma].add(newkey)
     return
 
-def main():
-    G = load_graph('example.txt')
-# G = load_graph('../resources/facebook/facebook_combined.txt')
-   # G = load_graph('andrej_test2.txt')
 
+def main():
+    (G, n, reverse_mapping) = load_graph('../resources/amazon/com-amazon.ungraph.txt')
+    # G = load_graph('andrej_test2.txt')
+    # (G, n, reverse_mapping) = load_graph('example.txt')  #retrieve the graph with self-edges, total number of vertices and mapping to original indices
     t = 3                            # choice of t
-    (P_t, n) = get_P_t(G, t)         # the Pt matrix from the question set and the total number of vertices in the graph
+    P_t = get_P_t(G, t, n)           # the Pt matrix from the question set and
     Deg = dict()                     # degree of each vertex
-    D = []                           # diagonal matrix of vertex degrees ^(-1/2)
     Ccard = dict()                   # the mapping of community indices to their respective cardinality
     CP_t = dict()                    # the mapping of community indices to their respective P_t_C_.
     Cneig = dict()                   # the mapping of community indices to their "neighbour" communities (ones who share a direct edge to them)
@@ -161,18 +215,17 @@ def main():
     unsorted_sigma_to_C1C2 = dict()  # a mapping of sigmas (updated with new values regularly)
     merge_order = []                 # a list of tuples in set merge order ((C1,C2) means C1 and C2 were merged to C1)
 
-    for v in G.keys():
+    for v in range(n):
         Ccard[v] = 1.0
-    for v in G.keys():
-        Deg[v] = len(G[v])
-    for v in Deg.keys():
-        D.append(1.0 / sqrt(Deg[v]+1))
-    for v in G.keys():
-        Cneig[v] = set(G[v])
-    for v in G.keys():
+        Deg[v] = len(G[v])-1
+        Cneig[v] = G[v]
+        Cneig[v].remove(v) # remove the redundant "self" element from the set
         CP_t[v] = P_t[v, :]
-    for C1 in G.keys():
-        for C2 in G[C1]:
+
+    D = get_sparse_D(n, Deg) # diagonal matrix of vertex degrees ^(-1/2)
+
+    for C1 in range(n):
+        for C2 in Cneig[C1]:
             if not (C1, C2) in C1C2_to_sigma and C1 < C2:
                 sigmaC1C2 = delta_sigma_C1C2(n, Ccard[C1], Ccard[C2], D, CP_t[C1], CP_t[C2])
                 C1C2_to_sigma[(C1, C2)] = sigmaC1C2
@@ -182,9 +235,17 @@ def main():
 
     sigma_to_C1C2 = SortedDict(unsorted_sigma_to_C1C2) # a constantly sorted mapping of sigmas (updated with new values regularly)
 
+    visual_counter = 0
     # iterate through all merges
     for _ in range(n-1):
-        # select the minimum element in the sorted set, record and remove itit
+        # ONLY FOR DEBUGGING
+        print_no_newline('|')
+        visual_counter += 1
+        if visual_counter > 200:
+            visual_counter -= 200
+            print_no_newline('\n')
+
+        # select the minimum element in the sorted set, record and remove it
         (C1, C2) = sigma_to_C1C2.viewvalues()[0][0]
         sigmaC1C2 = C1C2_to_sigma[(C1,C2)]
         merge_order.append((C1, C2, sigmaC1C2))
@@ -220,7 +281,6 @@ def main():
                     Cneig[B].remove(C2)
                     Cneig[B].add(C1)
 
-
         # update the sigma mappings
         for (newpair, C) in updatePairs:
             newsigma = delta_sigma_C3C(n, Ccard[C1], Ccard[C2], Ccard[C], D, CP_t[C1], CP_t[C2], CP_t[C], sigmaC1C2)
@@ -237,42 +297,44 @@ def main():
         Ccard[C1] = cardC3
         del Ccard[C2]
 
-
-    dendomatrix = []
-    oldtonewset = dict()
-    currnew = n
-    for (a, b, sigma) in merge_order:
-        newa = a
-        newb = b
-        if a in oldtonewset:
-            newa = oldtonewset[a]
-        if b in oldtonewset:
-            newb = oldtonewset[b]
-
-        if newa < newb:
-            dendomatrix.append([newa, newb, currnew, sigma])
+    sigma_prev = 0
+    max_eta = 0
+    max_iter = 0
+    for (idx, (a, b, sigma)) in enumerate(merge_order):
+        if idx == 0:
+            sigma_prev = sigma
         else:
-            dendomatrix.append([newb, newa, currnew, sigma])
+            eta = sigma/sigma_prev
+            if eta > max_eta:
+                max_eta = eta
+                max_iter = idx
+            sigma_prev = sigma
 
-        oldtonewset[a] = currnew
-        currnew += 1
+    sets = SortedDict()
+    for i in range(n):
+        sets[i] = SortedSet()
+        sets[i].add(reverse_mapping[i])
 
-    fig = plt.figure(figsize=(25, 10))
-    fancy_dendrogram(
-        dendomatrix,
-        truncate_mode='lastp',
-        p=30,
-        leaf_rotation=0.,
-        leaf_font_size=12.,
-        show_contracted=True,
-        annotate_above=40,
-        max_d=170,
-    )
-    #dn = dendrogram(dendomatrix)
-    plt.show()
+    for i in range(max_iter):
+        (a, b, sigma) = merge_order[i]
+        sets[a] = sets[a].union(sets[b])
+        del sets[b]
+
+    for idx in sets.keys():
+        for i in range(len(sets[idx])):
+            print_no_newline(str (sets[idx][i]))
+            if i < len(sets[idx]) - 1:
+                print_no_newline(' ')
+        print_no_newline('\n')
+
+    #fancy_plot(n, merge_order, reverse_mapping)
 
     return
 
+def print_no_newline(string):
+    import sys
+    sys.stdout.write(string)
+    sys.stdout.flush()
 
 if __name__ == '__main__':
     main()
