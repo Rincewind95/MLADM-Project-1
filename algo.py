@@ -10,12 +10,38 @@
 #-------------------------------------------------------------------------------
 
 import numpy as np
+from scipy.cluster.hierarchy import dendrogram
 from scipy.sparse import *
 from scipy.sparse import identity
 from scipy import *
 from sortedcontainers import SortedDict
 from sortedcontainers import SortedSet
+from scipy.cluster import hierarchy
+import matplotlib.pyplot as plt
 
+def fancy_dendrogram(*args, **kwargs):
+    max_d = kwargs.pop('max_d', None)
+    if max_d and 'color_threshold' not in kwargs:
+        kwargs['color_threshold'] = max_d
+    annotate_above = kwargs.pop('annotate_above', 0)
+
+    ddata = dendrogram(*args, **kwargs)
+
+    if not kwargs.get('no_plot', False):
+        plt.title('Merging Dendogram')
+        plt.xlabel('cluster elements')
+        plt.ylabel('joined clusters')
+        for i, d, c in zip(ddata['icoord'], ddata['dcoord'], ddata['color_list']):
+            x = 0.5 * sum(i[1:3])
+            y = d[1]
+            if y > annotate_above:
+                plt.plot(x, y, 'o', c=c)
+                plt.annotate("%.3g" % y, (x, y), xytext=(0, -5),
+                             textcoords='offset points',
+                             va='top', ha='center')
+        if max_d:
+            plt.axhline(y=max_d, c='k')
+    return ddata
 
 def load_graph(location):
     data = np.genfromtxt(location, skip_header=1, dtype=int)
@@ -30,7 +56,7 @@ def load_graph(location):
 
 
 def exp_squaring(P, t, node_cnt):
-    R = identity(node_cnt, dtype='float')
+    R = np.identity(node_cnt, dtype='float')
     if t == 0:
         return R
     else:
@@ -45,19 +71,45 @@ def exp_squaring(P, t, node_cnt):
         return P * R
 
 def get_P_t(G, t):
+    # artificially modify G to have 'self-loops'
+    maxidx = 0
+    Gnew = dict()
+    for v1 in G.keys():
+        if v1 > maxidx:
+            maxidx = v1
+        added = False
+        Gnew[v1] = []
+        for v2 in G[v1]:
+            if v2 > maxidx:
+                maxidx = v2
+            if v2 == v1:
+                added = True
+            elif v2 > v1:
+                if not added:
+                    Gnew[v1].append(v1)
+                    added = True
+            Gnew[v1].append(v2)
+        if not added:
+            Gnew[v1].append(v1)
+    maxidx = maxidx + 1
     indices = []
     indexptr = [0]
     data = []
-    for n in G.keys():
-        neig_cnt = len(G[n])
-        for neig in G[n]:
+    for curr in range(maxidx):
+        if not curr in Gnew.keys():
+            indices.append(0)
+            data.append(0.0)
+            indexptr.append(len(indices))
+            continue
+        neig_cnt = len(Gnew[curr])
+        for neig in Gnew[curr]:
             indices.append(neig)
             data.append(1.0/neig_cnt)
         indexptr.append(len(indices))
 
     P = csr_matrix((data, indices, indexptr), dtype=float)
-    P = exp_squaring(P, t, len(G.keys()))
-    return P
+    P = exp_squaring(P, t, maxidx)
+    return (P, maxidx)
 
 def get_r2_C1C2(D, P_t_C1, P_t_C2):
     r = D * P_t_C1 - D * P_t_C2
@@ -94,14 +146,14 @@ def add_elem(sigma_to_C1C2, C1C2_to_sigma, newkey, newsigma):
     return
 
 def main():
-    #G = load_graph('example.txt')
-    G = load_graph('andrej_test2.txt')
+    G = load_graph('example.txt')
+# G = load_graph('../resources/facebook/facebook_combined.txt')
+   # G = load_graph('andrej_test2.txt')
 
     t = 3                            # choice of t
-    P_t = get_P_t(G, t)              # the Pt matrix from the question set
+    (P_t, n) = get_P_t(G, t)         # the Pt matrix from the question set and the total number of vertices in the graph
     Deg = dict()                     # degree of each vertex
     D = []                           # diagonal matrix of vertex degrees ^(-1/2)
-    n = len(G.keys())                # total number of vertices in the graph
     Ccard = dict()                   # the mapping of community indices to their respective cardinality
     CP_t = dict()                    # the mapping of community indices to their respective P_t_C_.
     Cneig = dict()                   # the mapping of community indices to their "neighbour" communities (ones who share a direct edge to them)
@@ -114,7 +166,7 @@ def main():
     for v in G.keys():
         Deg[v] = len(G[v])
     for v in Deg.keys():
-        D.append(1.0 / sqrt(Deg[v]))
+        D.append(1.0 / sqrt(Deg[v]+1))
     for v in G.keys():
         Cneig[v] = set(G[v])
     for v in G.keys():
@@ -184,6 +236,40 @@ def main():
         del Cneig[C2]
         Ccard[C1] = cardC3
         del Ccard[C2]
+
+
+    dendomatrix = []
+    oldtonewset = dict()
+    currnew = n
+    for (a, b, sigma) in merge_order:
+        newa = a
+        newb = b
+        if a in oldtonewset:
+            newa = oldtonewset[a]
+        if b in oldtonewset:
+            newb = oldtonewset[b]
+
+        if newa < newb:
+            dendomatrix.append([newa, newb, currnew, sigma])
+        else:
+            dendomatrix.append([newb, newa, currnew, sigma])
+
+        oldtonewset[a] = currnew
+        currnew += 1
+
+    fig = plt.figure(figsize=(25, 10))
+    fancy_dendrogram(
+        dendomatrix,
+        truncate_mode='lastp',
+        p=30,
+        leaf_rotation=0.,
+        leaf_font_size=12.,
+        show_contracted=True,
+        annotate_above=40,
+        max_d=170,
+    )
+    #dn = dendrogram(dendomatrix)
+    plt.show()
 
     return
 
