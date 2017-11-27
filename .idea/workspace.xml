@@ -2,36 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb25bedc-b736-4197-a6c2-6144b6348ef0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-09-08_calc_gen_graph_15-23-52.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-09-08_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-18-19_gen_calc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-18-19_gen_graph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-18-39_gen_calc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-18-39_gen_graph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/19-52-18_calc_18-18-55_gen_graph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/19-52-18_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/example-output01-16-43.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/gen_graph_05-46-17.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/gen_graph_15-23-52.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/gen_graph_16-31-15.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/gen_graph_16-34-52.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output01-54-56.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output01-55-04.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output05-47-03.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output11-50-24.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output14-55-29.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output15-04-09.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output15-16-26.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output15-16-34.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output15-18-20.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output15-22-24.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output15-24-58.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output16-13-24.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output16-26-39.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output16-28-46.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output16-29-17.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output16-34-52.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algo.py" afterPath="$PROJECT_DIR$/algo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,8 +16,8 @@
       <file leaf-file-name="algo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="176" column="2" lean-forward="true" selection-start-line="176" selection-start-column="2" selection-end-line="176" selection-end-column="2" />
+            <state relative-caret-position="272">
+              <caret line="200" column="21" lean-forward="false" selection-start-line="200" selection-start-column="21" selection-end-line="200" selection-end-column="21" />
               <folding>
                 <element signature="e#305#323#0" expanded="true" />
                 <element signature="e#844#1684#0" expanded="false" />
@@ -56,8 +26,9 @@
                 <element signature="e#3346#3631#0" expanded="false" />
                 <element signature="e#3665#3995#0" expanded="false" />
                 <element signature="e#4028#4513#0" expanded="false" />
-                <element signature="e#5781#5948#0" expanded="false" />
-                <element signature="e#5981#6053#0" expanded="false" />
+                <element signature="e#4544#5052#0" expanded="false" />
+                <element signature="e#6328#6495#0" expanded="false" />
+                <element signature="e#6528#6600#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -339,17 +310,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>414</line>
+          <line>442</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>403</line>
+          <line>431</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>407</line>
+          <line>435</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -407,8 +378,9 @@
             <element signature="e#3346#3631#0" expanded="false" />
             <element signature="e#3665#3995#0" expanded="false" />
             <element signature="e#4028#4513#0" expanded="false" />
-            <element signature="e#5781#5948#0" expanded="false" />
-            <element signature="e#5981#6053#0" expanded="false" />
+            <element signature="e#4544#5052#0" expanded="false" />
+            <element signature="e#6328#6495#0" expanded="false" />
+            <element signature="e#6528#6600#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -445,8 +417,9 @@
             <element signature="e#3346#3631#0" expanded="false" />
             <element signature="e#3665#3995#0" expanded="false" />
             <element signature="e#4028#4513#0" expanded="false" />
-            <element signature="e#5781#5948#0" expanded="false" />
-            <element signature="e#5981#6053#0" expanded="false" />
+            <element signature="e#4544#5052#0" expanded="false" />
+            <element signature="e#6328#6495#0" expanded="false" />
+            <element signature="e#6528#6600#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -493,8 +466,9 @@
             <element signature="e#3346#3631#0" expanded="false" />
             <element signature="e#3665#3995#0" expanded="false" />
             <element signature="e#4028#4513#0" expanded="false" />
-            <element signature="e#5781#5948#0" expanded="false" />
-            <element signature="e#5981#6053#0" expanded="false" />
+            <element signature="e#4544#5052#0" expanded="false" />
+            <element signature="e#6328#6495#0" expanded="false" />
+            <element signature="e#6528#6600#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -617,8 +591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="176" column="2" lean-forward="true" selection-start-line="176" selection-start-column="2" selection-end-line="176" selection-end-column="2" />
+        <state relative-caret-position="272">
+          <caret line="200" column="21" lean-forward="false" selection-start-line="200" selection-start-column="21" selection-end-line="200" selection-end-column="21" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
             <element signature="e#844#1684#0" expanded="false" />
@@ -627,8 +601,9 @@
             <element signature="e#3346#3631#0" expanded="false" />
             <element signature="e#3665#3995#0" expanded="false" />
             <element signature="e#4028#4513#0" expanded="false" />
-            <element signature="e#5781#5948#0" expanded="false" />
-            <element signature="e#5981#6053#0" expanded="false" />
+            <element signature="e#4544#5052#0" expanded="false" />
+            <element signature="e#6328#6495#0" expanded="false" />
+            <element signature="e#6528#6600#0" expanded="false" />
           </folding>
         </state>
       </provider>

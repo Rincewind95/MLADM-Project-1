@@ -168,9 +168,35 @@ def get_P_t(Gself, t, n):
     return P
 
 
+def sorted_union(a, b):
+    idxa = 0
+    idxb = 0
+    l = []
+    lena = len(a)
+    lenb = len(b)
+    while idxa < lena and idxb < lenb:
+        if a[idxa] < b[idxb]:
+            l.append(a[idxa])
+            idxa += 1
+        elif a[idxa] > b[idxb]:
+            l.append(b[idxb])
+            idxb += 1
+        else:
+            l.append(a[idxa])
+            idxa += 1
+            idxb += 1
+    while idxa < lena:
+        l.append(a[idxa])
+        idxa += 1
+    while idxb < lenb:
+        l.append(b[idxb])
+        idxb += 1
+    return l
+
+
 def get_r2_C1C2(DP_t_C1, DP_t_C2):
     res = 0
-    indices = DP_t_C1.indices.union(DP_t_C2.indices)
+    indices = sorted_union(DP_t_C1.indices, DP_t_C2.indices)
     for index in indices:
         elem = DP_t_C1.value[index] - DP_t_C2.value[index]
         res += elem*elem
@@ -218,13 +244,14 @@ def get_min_pair(C1, C2):
         return (C2, C1)
 
 
-#infilename = 'testing/amazon/com-amazon.ungraph.txt'
+#infilename = 'com-amazon.ungraph'
 infilename = 'example'
 #infilename = '18-18-55_gen_graph'
 outfilename = '%s_output' % '{:%H-%M-%S}'.format(datetime.datetime.now())
 calcfilename = '%s_calc_%s' % ('{:%H-%M-%S}'.format(datetime.datetime.now()),infilename)
 outdir = 'out/'
 indir = 'testing/examples/'
+#indir = 'testing/amazon/'
 txt = '.txt'
 infilename = indir + infilename + txt
 outfilename = outdir + outfilename + txt
@@ -277,11 +304,12 @@ def main():
         pt = P_t[v, :]
         indexes = pt.indices
         data = pt.data
-        CDP_t[v] = SparseVec(indices=set(),
+        CDP_t[v] = SparseVec(indices=[],
                              value=defaultdict(lambda: 0.0))
         for (pos, index) in enumerate(indexes):
-            CDP_t[v].indices.add(index)
+            CDP_t[v].indices.append(index)
             CDP_t[v].value[index] = data[pos] * D[index]
+        CDP_t[v].indices.sort()
 
     print_with_timestep('Finished calculating D and DP_t...')
 
@@ -325,7 +353,7 @@ def main():
             del sigma_to_C1C2[sigmaC1C2]
 
         # calculate the values for the new community
-        DP_t_C3 = SparseVec(indices=CDP_t[C1].indices.union(CDP_t[C2].indices),
+        DP_t_C3 = SparseVec(indices=sorted_union(CDP_t[C1].indices, CDP_t[C2].indices),
                             value=defaultdict(lambda: 0.0))
         c1card = Ccard[C1]
         c2card = Ccard[C2]
