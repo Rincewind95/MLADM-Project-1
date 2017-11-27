@@ -234,8 +234,9 @@ def get_min_pair(C1, C2):
         return (C2, C1)
 
 
-# infilename = 'testing/amazon/com-amazon.ungraph.txt'
-infilename = 'testing/examples/example.txt'
+infilename = 'testing/amazon/com-amazon.ungraph.txt'
+#infilename = 'testing/examples/example.txt'
+#infilename = 'out/gen_graph_05-46-17.txt'
 outfilename = 'out/output%s.txt' % '{:%H-%M-%S}'.format(datetime.datetime.now())
 outfile = open(outfilename, 'w')
 
