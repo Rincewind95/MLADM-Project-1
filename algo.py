@@ -195,11 +195,11 @@ def delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, deltaC1C2, CDP_t, n):
     C1C = get_min_pair(C1, C)
     C2C = get_min_pair(C2, C)
     if C1C in oldkeyMap.keys():
-        deltaC1C = oldkeyMap[get_min_pair(C1, C)]
+        deltaC1C = oldkeyMap[C1C]
     else:
         deltaC1C = delta_sigma_C1C2(n , Ccard[C1], Ccard[C], CDP_t[C1], CDP_t[C])
     if C2C in oldkeyMap.keys():
-        deltaC2C = oldkeyMap[get_min_pair(C2, C)]
+        deltaC2C = oldkeyMap[C2C]
     else:
         deltaC2C = delta_sigma_C1C2(n , Ccard[C2], Ccard[C], CDP_t[C2], CDP_t[C])
 
@@ -234,8 +234,8 @@ def get_min_pair(C1, C2):
         return (C2, C1)
 
 
-infilename = 'testing/amazon/com-amazon.ungraph.txt'
-#infilename = 'testing/examples/example.txt'
+#infilename = 'testing/amazon/com-amazon.ungraph.txt'
+infilename = 'testing/examples/example.txt'
 #infilename = 'out/gen_graph_05-46-17.txt'
 outfilename = 'out/output%s.txt' % '{:%H-%M-%S}'.format(datetime.datetime.now())
 outfile = open(outfilename, 'w')
@@ -268,28 +268,34 @@ def main():
     for v in range(n):
         Ccard[v] = 1.0
         Deg[v] = len(G[v])-1
-        Cneig[v] = G[v]
+        Cneig[v] = set()
+        for elem in G[v]:
+            Cneig[v].add(elem)
         Cneig[v].remove(v) # remove the redundant "self" element from the set
 
-    D = get_sparse_D(n, Deg) # diagonal matrix of vertex degrees ^(-1/2)
-
-    print_with_timestep('Calculating DP_t...')
-
+    print_with_timestep('Calculating D and DP_t...')
     D = dict()
-
     for v in range(n):
         D[v] = 1.0 / sqrt(Deg[v] + 1)
 
     visual_counter = 0
     for v in range(n):
         visual_counter = increment_visual_counter(visual_counter)
-
         pt = P_t[v, :]
         indexes = pt.indices
-        for (loc,idx) in enumerate(indexes):
+        for (loc, idx) in enumerate(indexes):
             pt.data[loc] *= D[idx]
         CDP_t[v] = pt
+    print_with_timestep('Finished calculating D and DP_t...')
 
+    print_with_timestep('Explicitly delete G, P_t and Deg...')
+    # explicitly get rid of G to cut down on memory
+    for v in range(n):
+        G[v] = None
+    del G
+    del P_t
+    del Deg
+    print_with_timestep('Finished deleting G, P_t and Deg...')
 
     print_with_timestep('Setting up the structures...')
     visual_counter = 0

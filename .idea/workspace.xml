@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb25bedc-b736-4197-a6c2-6144b6348ef0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algo.py" afterPath="$PROJECT_DIR$/algo.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_generator.py" afterPath="$PROJECT_DIR$/graph_generator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/output01-54-56.txt" afterPath="$PROJECT_DIR$/out/output01-54-56.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/output01-55-04.txt" afterPath="$PROJECT_DIR$/out/output01-55-04.txt" />
     </list>
@@ -19,8 +19,8 @@
       <file leaf-file-name="algo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="242" column="20" lean-forward="true" selection-start-line="242" selection-start-column="20" selection-end-line="242" selection-end-column="20" />
+            <state relative-caret-position="338">
+              <caret line="346" column="19" lean-forward="false" selection-start-line="346" selection-start-column="19" selection-end-line="346" selection-end-column="19" />
               <folding>
                 <element signature="e#305#323#0" expanded="true" />
                 <element signature="e#671#1511#0" expanded="false" />
@@ -30,10 +30,9 @@
                 <element signature="e#3830#4160#0" expanded="false" />
                 <element signature="e#4193#4678#0" expanded="false" />
                 <element signature="e#4883#4985#0" expanded="false" />
-                <element signature="e#5063#5646#0" expanded="false" />
-                <element signature="e#5719#5951#0" expanded="false" />
-                <element signature="e#6020#6187#0" expanded="false" />
-                <element signature="e#6220#6289#0" expanded="false" />
+                <element signature="e#5687#5919#0" expanded="false" />
+                <element signature="e#5988#6155#0" expanded="false" />
+                <marker date="1511795780362" expanded="false" signature="6183:6257" ph="..." />
               </folding>
             </state>
           </provider>
@@ -47,16 +46,6 @@
               <folding>
                 <element signature="e#304#319#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="1025" column="0" lean-forward="false" selection-start-line="1025" selection-start-column="0" selection-end-line="1025" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -76,7 +65,6 @@
       <find>node_cnt</find>
       <find>len(G</find>
       <find>Ccard</find>
-      <find>G</find>
       <find>reverse_mapping</find>
       <find>CP_t</find>
       <find>P</find>
@@ -86,6 +74,7 @@
       <find>1k</find>
       <find>doutC</find>
       <find>random</find>
+      <find>G</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -221,7 +210,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2916225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -245,27 +234,27 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>405</line>
+          <line>411</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>395</line>
+          <line>401</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>348</line>
+          <line>354</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>399</line>
+          <line>405</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>283</line>
+          <line>281</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -314,10 +303,9 @@
             <element signature="e#3830#4160#0" expanded="false" />
             <element signature="e#4193#4678#0" expanded="false" />
             <element signature="e#4883#4985#0" expanded="false" />
-            <element signature="e#5063#5646#0" expanded="false" />
-            <element signature="e#5719#5951#0" expanded="false" />
-            <element signature="e#6020#6187#0" expanded="false" />
-            <element signature="e#6220#6289#0" expanded="false" />
+            <element signature="e#5687#5919#0" expanded="false" />
+            <element signature="e#5988#6155#0" expanded="false" />
+            <marker date="1511795780362" expanded="false" signature="6183:6257" ph="..." />
           </folding>
         </state>
       </provider>
@@ -445,8 +433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="242" column="20" lean-forward="true" selection-start-line="242" selection-start-column="20" selection-end-line="242" selection-end-column="20" />
+        <state relative-caret-position="338">
+          <caret line="346" column="19" lean-forward="false" selection-start-line="346" selection-start-column="19" selection-end-line="346" selection-end-column="19" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
             <element signature="e#671#1511#0" expanded="false" />
@@ -456,10 +444,9 @@
             <element signature="e#3830#4160#0" expanded="false" />
             <element signature="e#4193#4678#0" expanded="false" />
             <element signature="e#4883#4985#0" expanded="false" />
-            <element signature="e#5063#5646#0" expanded="false" />
-            <element signature="e#5719#5951#0" expanded="false" />
-            <element signature="e#6020#6187#0" expanded="false" />
-            <element signature="e#6220#6289#0" expanded="false" />
+            <element signature="e#5687#5919#0" expanded="false" />
+            <element signature="e#5988#6155#0" expanded="false" />
+            <marker date="1511795780362" expanded="false" signature="6183:6257" ph="..." />
           </folding>
         </state>
       </provider>
