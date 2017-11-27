@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb25bedc-b736-4197-a6c2-6144b6348ef0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Amazon0505.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/andrej_test.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/andrej_test2.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/output01-17-05.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algo.py" afterPath="$PROJECT_DIR$/algo.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,19 +18,22 @@
       <file leaf-file-name="algo.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/algo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+            <state relative-caret-position="447">
+              <caret line="418" column="0" lean-forward="true" selection-start-line="418" selection-start-column="0" selection-end-line="418" selection-end-column="0" />
               <folding>
                 <element signature="e#305#323#0" expanded="true" />
-                <element signature="e#670#1510#0" expanded="false" />
-                <element signature="e#2394#3137#0" expanded="false" />
-                <element signature="e#3171#3456#0" expanded="false" />
-                <element signature="e#3489#3794#0" expanded="false" />
-                <element signature="e#3828#4158#0" expanded="false" />
-                <element signature="e#4191#4676#0" expanded="false" />
-                <element signature="e#5717#5949#0" expanded="false" />
-                <element signature="e#6018#6185#0" expanded="false" />
-                <element signature="e#6218#6287#0" expanded="false" />
+                <element signature="e#671#1511#0" expanded="false" />
+                <element signature="e#1567#2362#0" expanded="false" />
+                <element signature="e#2395#3138#0" expanded="false" />
+                <element signature="e#3173#3458#0" expanded="false" />
+                <element signature="e#3830#4160#0" expanded="false" />
+                <element signature="e#4193#4678#0" expanded="false" />
+                <element signature="e#4720#4817#0" expanded="false" />
+                <element signature="e#4883#4985#0" expanded="false" />
+                <element signature="e#5063#5646#0" expanded="false" />
+                <element signature="e#5719#5951#0" expanded="false" />
+                <element signature="e#6020#6187#0" expanded="false" />
+                <marker date="1511747722106" expanded="false" signature="6215:6289" ph="..." />
               </folding>
             </state>
           </provider>
@@ -73,6 +73,7 @@
       <find>P_t</find>
       <find>print_with_timestep</find>
       <find>print</find>
+      <find>1k</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,7 +186,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18133616" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2916225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -210,23 +211,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>386</line>
+          <line>404</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>376</line>
+          <line>394</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>329</line>
+          <line>347</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>380</line>
+          <line>398</line>
           <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/algo.py</url>
+          <line>282</line>
+          <option name="timeStamp" value="113" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -236,7 +242,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="113" />
+      <option name="time" value="115" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -247,15 +253,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
-            <element signature="e#670#1510#0" expanded="false" />
-            <element signature="e#2394#3137#0" expanded="false" />
-            <element signature="e#3171#3456#0" expanded="false" />
-            <element signature="e#3489#3794#0" expanded="false" />
-            <element signature="e#3828#4158#0" expanded="false" />
-            <element signature="e#4191#4676#0" expanded="false" />
-            <element signature="e#5717#5949#0" expanded="false" />
-            <element signature="e#6018#6185#0" expanded="false" />
-            <element signature="e#6218#6287#0" expanded="false" />
+            <element signature="e#671#1511#0" expanded="false" />
+            <element signature="e#1567#2362#0" expanded="false" />
+            <element signature="e#2395#3138#0" expanded="false" />
+            <element signature="e#3173#3458#0" expanded="false" />
+            <element signature="e#3830#4160#0" expanded="false" />
+            <element signature="e#4193#4678#0" expanded="false" />
+            <element signature="e#4720#4817#0" expanded="false" />
+            <element signature="e#4883#4985#0" expanded="false" />
+            <element signature="e#5063#5646#0" expanded="false" />
+            <element signature="e#5719#5951#0" expanded="false" />
+            <element signature="e#6020#6187#0" expanded="false" />
+            <marker date="1511747722106" expanded="false" signature="6215:6289" ph="..." />
           </folding>
         </state>
       </provider>
@@ -375,19 +384,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="233" column="0" lean-forward="false" selection-start-line="233" selection-start-column="0" selection-end-line="233" selection-end-column="0" />
+        <state relative-caret-position="447">
+          <caret line="418" column="0" lean-forward="true" selection-start-line="418" selection-start-column="0" selection-end-line="418" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
-            <element signature="e#670#1510#0" expanded="false" />
-            <element signature="e#2394#3137#0" expanded="false" />
-            <element signature="e#3171#3456#0" expanded="false" />
-            <element signature="e#3489#3794#0" expanded="false" />
-            <element signature="e#3828#4158#0" expanded="false" />
-            <element signature="e#4191#4676#0" expanded="false" />
-            <element signature="e#5717#5949#0" expanded="false" />
-            <element signature="e#6018#6185#0" expanded="false" />
-            <element signature="e#6218#6287#0" expanded="false" />
+            <element signature="e#671#1511#0" expanded="false" />
+            <element signature="e#1567#2362#0" expanded="false" />
+            <element signature="e#2395#3138#0" expanded="false" />
+            <element signature="e#3173#3458#0" expanded="false" />
+            <element signature="e#3830#4160#0" expanded="false" />
+            <element signature="e#4193#4678#0" expanded="false" />
+            <element signature="e#4720#4817#0" expanded="false" />
+            <element signature="e#4883#4985#0" expanded="false" />
+            <element signature="e#5063#5646#0" expanded="false" />
+            <element signature="e#5719#5951#0" expanded="false" />
+            <element signature="e#6020#6187#0" expanded="false" />
+            <marker date="1511747722106" expanded="false" signature="6215:6289" ph="..." />
           </folding>
         </state>
       </provider>

@@ -21,6 +21,7 @@ import matplotlib.pyplot as plt
 import datetime
 import sys
 
+
 def fancy_dendrogram(*args, **kwargs):
     max_d = kwargs.pop('max_d', None)
     if max_d and 'color_threshold' not in kwargs:
@@ -112,6 +113,7 @@ def load_graph(location):
         G[x].add(x)
     print_with_timestep('Finished loading G...')
     return (G, n, reverse_mapping)
+
 
 def get_sparse_identity(n):
     # artificially modify G to have 'self-loops'
@@ -231,14 +233,22 @@ def get_min_pair(C1, C2):
     else:
         return (C2, C1)
 
-infilename = 'testing/amazon/com-amazon.ungraph.txt'
-# infilename = 'testing/examples/example.txt'
+
+# infilename = 'testing/amazon/com-amazon.ungraph.txt'
+infilename = 'testing/examples/example.txt'
 outfilename = 'out/output%s.txt' % '{:%H-%M-%S}'.format(datetime.datetime.now())
 outfile = open(outfilename, 'w')
 
+def increment_visual_counter(visual_counter):
+    visual_counter += 1
+    if visual_counter % 1000 == 0:
+        print_with_timestep("%sk done..." % (visual_counter / 1000))
+    return visual_counter
+
+
 def main():
     t = 3                            # choice of t
-    print_no_newline('!IPORTANT! -> t = %s\n\n' % t)
+    print_no_newline('!IMPORTANT! -> t = %s\n\n' % t)
 
     # retrieve the graph with self-edges, total number of vertices and mapping to original indices
     (G, n, reverse_mapping) = load_graph(infilename)
@@ -252,6 +262,7 @@ def main():
     unsorted_sigma_to_C1C2 = dict()  # a mapping of sigmas (updated with new values regularly)
     merge_order = []                 # a list of tuples in set merge order ((C1,C2) means C1 and C2 were merged to C1)
 
+    print_with_timestep('Calculating D and smaller things...')
 
     for v in range(n):
         Ccard[v] = 1.0
@@ -261,18 +272,29 @@ def main():
 
     D = get_sparse_D(n, Deg) # diagonal matrix of vertex degrees ^(-1/2)
 
+    print_with_timestep('Calculating DP_t...')
+
+    D = dict()
+
     for v in range(n):
-        CDP_t[v] = P_t[v, :]*D
+        D[v] = 1.0 / sqrt(Deg[v] + 1)
+
+    visual_counter = 0
+    for v in range(n):
+        visual_counter = increment_visual_counter(visual_counter)
+
+        pt = P_t[v, :]
+        indexes = pt.indices
+        for (loc,idx) in enumerate(indexes):
+            pt.data[loc] *= D[idx]
+        CDP_t[v] = pt
+
 
     print_with_timestep('Setting up the structures...')
     visual_counter = 0
     for C1 in range(n):
         for C2 in Cneig[C1]:
-            # ONLY FOR DEBUGGING
-            visual_counter += 1
-            if visual_counter >= 1000:
-                visual_counter -= 1000
-                print_with_timestep(" 1k later...")
+            visual_counter = increment_visual_counter(visual_counter)
 
             if not (C1, C2) in C1C2_to_sigma and C1 < C2:
                 sigmaC1C2 = delta_sigma_C1C2(n, Ccard[C1], Ccard[C2], CDP_t[C1], CDP_t[C2])
@@ -287,11 +309,7 @@ def main():
     # iterate through all merges
     print_with_timestep('About to start the algo...')
     for _ in range(n-1):
-        # ONLY FOR DEBUGGING
-        visual_counter += 1
-        if visual_counter >= 1000:
-            visual_counter -= 1000
-            print_with_timestep(" 1k later...")
+        visual_counter = increment_visual_counter(visual_counter)
 
         # select the minimum element in the sorted set, record and remove it
         (C1, C2) = sigma_to_C1C2.viewvalues()[0][0]
@@ -398,7 +416,6 @@ def print_with_timestep(string):
     outfile.write(s)
     sys.stdout.flush()
     outfile.flush()
-
 
 if __name__ == '__main__':
     main()
