@@ -129,20 +129,6 @@ def get_sparse_identity(n):
     return S
 
 
-def get_sparse_D(n, Deg):
-    # artificially modify G to have 'self-loops'
-    indices = []
-    indexptr = [0]
-    data = []
-    for curr in range(n):
-        indices.append(curr)
-        data.append(1.0 / sqrt(Deg[curr]+1))
-        indexptr.append(len(indices))
-
-    S = csr_matrix((data, indices, indexptr), dtype=float)
-    return S
-
-
 def exp_squaring(P, t, n):
     R = get_sparse_identity(n) # np.identity(node_cnt, dtype='float')
     if t == 0:
@@ -181,6 +167,7 @@ def get_P_t(Gself, t, n):
 def get_r2_C1C2(DP_t_C1, DP_t_C2):
     r = DP_t_C1 - DP_t_C2
     res = 0
+
     for elem in r.data:
         res += elem*elem
     return res
@@ -191,23 +178,16 @@ def delta_sigma_C1C2(n, cardC1, cardC2, DP_t_C1, DP_t_C2):
     return ((cardC1 * cardC2) / ((cardC1 + cardC2)*n))*r2_C1C2
 
 
-def delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, deltaC1C2, CDP_t, n):
+def delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, deltaC1C2, CDP_t, DP_t_C3, n):
     C1C = get_min_pair(C1, C)
     C2C = get_min_pair(C2, C)
-    if C1C in oldkeyMap.keys():
-        deltaC1C = oldkeyMap[C1C]
+    if C1C in oldkeyMap and C2C in oldkeyMap:
+        C1C = (Ccard[C1] + Ccard[C]) * oldkeyMap[C1C]
+        C2C = (Ccard[C2] + Ccard[C]) * oldkeyMap[C2C]
+        C1C2 = Ccard[C] * deltaC1C2
+        return (C1C + C2C - C1C2) / (Ccard[C1] + Ccard[C2] + Ccard[C])
     else:
-        deltaC1C = delta_sigma_C1C2(n , Ccard[C1], Ccard[C], CDP_t[C1], CDP_t[C])
-    if C2C in oldkeyMap.keys():
-        deltaC2C = oldkeyMap[C2C]
-    else:
-        deltaC2C = delta_sigma_C1C2(n , Ccard[C2], Ccard[C], CDP_t[C2], CDP_t[C])
-
-    C1C = (Ccard[C1] + Ccard[C])*deltaC1C
-    C2C = (Ccard[C2] + Ccard[C])*deltaC2C
-    C1C2 = Ccard[C]*deltaC1C2
-    return (C1C + C2C - C1C2)/(Ccard[C1] + Ccard[C2] + Ccard[C])
-
+        return delta_sigma_C1C2(n, Ccard[C1] + Ccard[C2], Ccard[C], DP_t_C3, CDP_t[C])
 
 def remove_elem(sigma_to_C1C2, C1C2_to_sigma, oldkeyMap, oldkey):
     sigmaC1C2 = C1C2_to_sigma[oldkey]
@@ -235,10 +215,19 @@ def get_min_pair(C1, C2):
 
 
 #infilename = 'testing/amazon/com-amazon.ungraph.txt'
-infilename = 'testing/examples/example.txt'
-#infilename = 'out/gen_graph_05-46-17.txt'
-outfilename = 'out/output%s.txt' % '{:%H-%M-%S}'.format(datetime.datetime.now())
+#infilename = 'testing/examples/example.txt'
+#infilename = 'gen_graph_15-23-52'
+infilename = '18-18-55_gen_graph'
+outfilename = '%s_output' % '{:%H-%M-%S}'.format(datetime.datetime.now())
+calcfilename = '%s_calc_%s' % ('{:%H-%M-%S}'.format(datetime.datetime.now()),infilename)
+outdir = 'out/'
+indir = 'out/'
+txt = '.txt'
+infilename = indir + infilename + txt
+outfilename = outdir + outfilename + txt
+calcfilename = outdir + calcfilename + txt
 outfile = open(outfilename, 'w')
+calcfile = open(calcfilename, 'w')
 
 def increment_visual_counter(visual_counter):
     visual_counter += 1
@@ -353,7 +342,7 @@ def main():
 
         # update the sigma mappings
         for (newpair, C) in updatePairs:
-            newsigma = delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, sigmaC1C2, CDP_t, n)
+            newsigma = delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, sigmaC1C2, CDP_t, DP_t_C3, n)
             add_elem(sigma_to_C1C2, C1C2_to_sigma, newpair, newsigma)
 
         # finally update the relevant values of the sets
@@ -399,16 +388,17 @@ def main():
 
     print_no_newline('\n')
     print_with_timestep('Optimal solution (eta = %s, max_iter = %s):' % (max_eta, max_iter))
-    for idx in sets.keys():
+    for idx in sets:
         for i in range(len(sets[idx])):
-            print_no_newline(str(sets[idx][i]))
+            print_calcfile(str(sets[idx][i]))
             if i < len(sets[idx]) - 1:
-                print_no_newline(' ')
-        print_no_newline('\n')
+                print_calcfile(' ')
+        print_calcfile('\n')
 
     #fancy_plot(n, merge_order, reverse_mapping)
 
     outfile.close()
+    calcfile.close()
     return
 
 def print_no_newline(string):
@@ -416,6 +406,14 @@ def print_no_newline(string):
     outfile.write(string)
     sys.stdout.flush()
     outfile.flush()
+
+def print_calcfile(string):
+    sys.stdout.write(string)
+    outfile.write(string)
+    calcfile.write(string)
+    sys.stdout.flush()
+    outfile.flush()
+    calcfile.flush()
 
 def print_with_timestep(string):
     s = '%s: %s\n' % ('{:%H:%M:%S.%f}'.format(datetime.datetime.now()), string)

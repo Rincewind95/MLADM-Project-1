@@ -41,19 +41,18 @@ def main():
     # Qe = 0.2        # wanted modularity - determines the value of beta
 
     # if the graph is homogenious
-    N = 1000
-    gamma = 0.3
+    N = 10000
+    gamma = 0.5
     k = int(pow(N, gamma))
-    alpha = 2
+    alpha = 4
     cardC = []
     dinC = []
     doutC = []
-    Qe = 0.6
+    Qe = 0.8
+
     for i in range(k):
         cardC.append(int(N/k))
         dinC.append(cardC[i] * int(alpha*log(cardC[i]))/2)
-
-
 
     idx_lbo = [0] # the lower bound for indices in each cluster
     for i in range(1,k):
@@ -67,6 +66,18 @@ def main():
 
     for i in range(k):
         doutC.append(int(dinC[i]*beta))
+
+    dir = 'out/'
+    txt = '.txt'
+    outfilebase = '%s_gen' % '{:%H-%M-%S}'.format(datetime.datetime.now())
+    outfilepath = dir + outfilebase + '_graph' + txt
+    outfile = open(outfilepath, 'w')
+    outfile.write("# k = %s\n" % k)
+    outfile.write("# N = %s\n" % N)
+    outfile.write("# alpha = %s\n" % alpha)
+    outfile.write("# beta = %s\n" % beta)
+    outfile.write("# gamma = %s\n" % gamma)
+    outfile.write("# Qe = %s\n" % Qe)
 
     # determine all the internal edges
     lef = 0
@@ -112,7 +123,7 @@ def main():
         max_alloc = minimum(remaining_doutC[C1], remaining_doutC[C2])
         alloc = np.random.choice(range(1, max_alloc + 1))
 
-        if (C1, C2) not in external_edge_bundle.keys():
+        if (C1, C2) not in external_edge_bundle:
             external_edge_bundle[(C1, C2)] = 0
         external_edge_bundle[(C1, C2)] += alloc
 
@@ -126,7 +137,7 @@ def main():
                     if pair in inter_connections:
                         inter_connections.remove(pair)
 
-    for (C1, C2) in external_edge_bundle.keys():
+    for (C1, C2) in external_edge_bundle:
         all_curr_edges = []
         for i in range(idx_lbo[C1], idx_lbo[C1] + cardC[C1]):
             for j in range(idx_lbo[C2], idx_lbo[C2] + cardC[C2]):
@@ -151,15 +162,23 @@ def main():
     #G#
     #plt.draw()
 
-    outfilename = 'out/gen_graph_%s.txt' % '{:%H-%M-%S}'.format(datetime.datetime.now())
-    outfile = open(outfilename, 'w')
     outfile.write("#\tFromNodeId\tToNodeId")
     outfile.flush()
     all_edges.sort()
     for (v1, v2) in all_edges:
         outfile.write("%s\t%s\n" % (v1, v2))
         outfile.flush()
+    outfile.close()
 
+    outfilepath = dir + outfilebase + '_calc' + txt
+    outfile = open(outfilepath, 'w')
+    for i in range(k):
+        for j in range(idx_lbo[i], idx_lbo[i] + cardC[i]):
+            if j > idx_lbo[i]:
+                outfile.write(" ")
+            outfile.write("%s" % j)
+        outfile.write("\n")
+        outfile.flush()
     outfile.close()
     return
 

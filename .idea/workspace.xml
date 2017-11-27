@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb25bedc-b736-4197-a6c2-6144b6348ef0" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/determine_R_prime.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algo.py" afterPath="$PROJECT_DIR$/algo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_generator.py" afterPath="$PROJECT_DIR$/graph_generator.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/output01-54-56.txt" afterPath="$PROJECT_DIR$/out/output01-54-56.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/output01-55-04.txt" afterPath="$PROJECT_DIR$/out/output01-55-04.txt" />
     </list>
@@ -16,23 +18,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="algo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="algo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="346" column="19" lean-forward="false" selection-start-line="346" selection-start-column="19" selection-end-line="346" selection-end-column="19" />
+            <state relative-caret-position="312">
+              <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
               <folding>
                 <element signature="e#305#323#0" expanded="true" />
                 <element signature="e#671#1511#0" expanded="false" />
                 <element signature="e#1567#2362#0" expanded="false" />
                 <element signature="e#2395#3138#0" expanded="false" />
                 <element signature="e#3173#3458#0" expanded="false" />
-                <element signature="e#3830#4160#0" expanded="false" />
-                <element signature="e#4193#4678#0" expanded="false" />
-                <element signature="e#4883#4985#0" expanded="false" />
-                <element signature="e#5687#5919#0" expanded="false" />
-                <element signature="e#5988#6155#0" expanded="false" />
-                <marker date="1511795780362" expanded="false" signature="6183:6257" ph="..." />
+                <element signature="e#3492#3822#0" expanded="false" />
+                <element signature="e#3855#4340#0" expanded="false" />
+                <element signature="e#5521#5688#0" expanded="false" />
+                <marker date="1511812330887" expanded="false" signature="5716:5790" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="determine_R_prime.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="75" column="9" lean-forward="false" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+              <folding>
+                <element signature="e#304#319#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,10 +53,22 @@
       <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="160" column="23" lean-forward="true" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+            <state relative-caret-position="937">
+              <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
               <folding>
                 <element signature="e#304#319#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,8 +97,13 @@
       <find>print</find>
       <find>1k</find>
       <find>doutC</find>
-      <find>random</find>
       <find>G</find>
+      <find>random</find>
+      <find>keys</find>
+      <find>key</find>
+      <find>get_sparse_identity</find>
+      <find>enumera</find>
+      <find>keys()</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -83,8 +112,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/testing/determine_R_prime.py" />
         <option value="$PROJECT_DIR$/graph_generator.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/algo.py" />
+        <option value="$PROJECT_DIR$/determine_R_prime.py" />
       </list>
     </option>
   </component>
@@ -119,6 +151,11 @@
               <item name="RandomWalks" type="b2602c69:ProjectViewProjectNode" />
               <item name="RandomWalks" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RandomWalks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RandomWalks" type="462c0819:PsiDirectoryNode" />
+              <item name="testing" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -126,7 +163,12 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\!!!M\!MILOS\Cambridge\Supervision work\Part III\Machine Learning and Algorithms for Data Mining\RandomWalks" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -140,7 +182,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.algo">
+  <component name="RunManager" selected="Python.determine_R_prime">
     <configuration name="algo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -154,6 +196,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="RandomWalks" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="determine_R_prime" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RandomWalks" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/determine_R_prime.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,14 +234,35 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="2">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="RandomWalks" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.algo" />
       <item index="1" class="java.lang.String" itemvalue="Python.graph_generator" />
+      <item index="2" class="java.lang.String" itemvalue="Python.determine_R_prime" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.algo" />
-        <item index="1" class="java.lang.String" itemvalue="Python.graph_generator" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.determine_R_prime" />
+        <item index="1" class="java.lang.String" itemvalue="Python.algo" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.graph_generator" />
       </list>
     </recent_temporary>
   </component>
@@ -234,48 +314,53 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>411</line>
+          <line>401</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>401</line>
+          <line>390</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>354</line>
+          <line>343</line>
           <option name="timeStamp" value="109" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>405</line>
+          <line>394</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>281</line>
+          <line>270</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>163</line>
+          <line>182</line>
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>148</line>
+          <line>159</line>
           <option name="timeStamp" value="132" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>151</line>
+          <line>162</line>
           <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>153</line>
-          <option name="timeStamp" value="135" />
+          <url>file://$PROJECT_DIR$/determine_R_prime.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/determine_R_prime.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="140" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -285,7 +370,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="136" />
+      <option name="time" value="143" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -300,12 +385,10 @@
             <element signature="e#1567#2362#0" expanded="false" />
             <element signature="e#2395#3138#0" expanded="false" />
             <element signature="e#3173#3458#0" expanded="false" />
-            <element signature="e#3830#4160#0" expanded="false" />
-            <element signature="e#4193#4678#0" expanded="false" />
-            <element signature="e#4883#4985#0" expanded="false" />
-            <element signature="e#5687#5919#0" expanded="false" />
-            <element signature="e#5988#6155#0" expanded="false" />
-            <marker date="1511795780362" expanded="false" signature="6183:6257" ph="..." />
+            <element signature="e#3492#3822#0" expanded="false" />
+            <element signature="e#3855#4340#0" expanded="false" />
+            <element signature="e#5521#5688#0" expanded="false" />
+            <marker date="1511812330887" expanded="false" signature="5716:5790" ph="..." />
           </folding>
         </state>
       </provider>
@@ -405,14 +488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -421,32 +496,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="160" column="23" lean-forward="true" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+        <state relative-caret-position="187">
+          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
           <folding>
-            <element signature="e#304#319#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="346" column="19" lean-forward="false" selection-start-line="346" selection-start-column="19" selection-end-line="346" selection-end-column="19" />
+        <state relative-caret-position="312">
+          <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
             <element signature="e#671#1511#0" expanded="false" />
             <element signature="e#1567#2362#0" expanded="false" />
             <element signature="e#2395#3138#0" expanded="false" />
             <element signature="e#3173#3458#0" expanded="false" />
-            <element signature="e#3830#4160#0" expanded="false" />
-            <element signature="e#4193#4678#0" expanded="false" />
-            <element signature="e#4883#4985#0" expanded="false" />
-            <element signature="e#5687#5919#0" expanded="false" />
-            <element signature="e#5988#6155#0" expanded="false" />
-            <marker date="1511795780362" expanded="false" signature="6183:6257" ph="..." />
+            <element signature="e#3492#3822#0" expanded="false" />
+            <element signature="e#3855#4340#0" expanded="false" />
+            <element signature="e#5521#5688#0" expanded="false" />
+            <marker date="1511812330887" expanded="false" signature="5716:5790" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="937">
+          <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="75" column="9" lean-forward="false" selection-start-line="75" selection-start-column="9" selection-end-line="75" selection-end-column="9" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
           </folding>
         </state>
       </provider>
