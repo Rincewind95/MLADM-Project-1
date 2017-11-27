@@ -19,7 +19,7 @@ from sortedcontainers import SortedSet
 from scipy.cluster import hierarchy
 import matplotlib.pyplot as plt
 import datetime
-
+import sys
 
 def fancy_dendrogram(*args, **kwargs):
     max_d = kwargs.pop('max_d', None)
@@ -176,30 +176,30 @@ def get_P_t(Gself, t, n):
     return P
 
 
-def get_r2_C1C2(D, P_t_C1, P_t_C2):
-    r = P_t_C1 * D - P_t_C2 * D
+def get_r2_C1C2(DP_t_C1, DP_t_C2):
+    r = DP_t_C1 - DP_t_C2
     res = 0
     for elem in r.data:
         res += elem*elem
     return res
 
 
-def delta_sigma_C1C2(n, cardC1, cardC2, D, P_t_C1, P_t_C2):
-    r2_C1C2 = get_r2_C1C2(D, P_t_C1, P_t_C2)
+def delta_sigma_C1C2(n, cardC1, cardC2, DP_t_C1, DP_t_C2):
+    r2_C1C2 = get_r2_C1C2(DP_t_C1, DP_t_C2)
     return ((cardC1 * cardC2) / ((cardC1 + cardC2)*n))*r2_C1C2
 
 
-def delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, deltaC1C2, CP_t, n, D):
+def delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, deltaC1C2, CDP_t, n):
     C1C = get_min_pair(C1, C)
     C2C = get_min_pair(C2, C)
     if C1C in oldkeyMap.keys():
         deltaC1C = oldkeyMap[get_min_pair(C1, C)]
     else:
-        deltaC1C = delta_sigma_C1C2(n , Ccard[C1], Ccard[C], D, CP_t[C1], CP_t[C])
+        deltaC1C = delta_sigma_C1C2(n , Ccard[C1], Ccard[C], CDP_t[C1], CDP_t[C])
     if C2C in oldkeyMap.keys():
         deltaC2C = oldkeyMap[get_min_pair(C2, C)]
     else:
-        deltaC2C = delta_sigma_C1C2(n , Ccard[C2], Ccard[C], D, CP_t[C2], CP_t[C])
+        deltaC2C = delta_sigma_C1C2(n , Ccard[C2], Ccard[C], CDP_t[C2], CDP_t[C])
 
     C1C = (Ccard[C1] + Ccard[C])*deltaC1C
     C2C = (Ccard[C2] + Ccard[C])*deltaC2C
@@ -231,43 +231,51 @@ def get_min_pair(C1, C2):
     else:
         return (C2, C1)
 
+infilename = 'testing/amazon/com-amazon.ungraph.txt'
+# infilename = 'testing/examples/example.txt'
+outfilename = 'out/output%s.txt' % '{:%H-%M-%S}'.format(datetime.datetime.now())
+outfile = open(outfilename, 'w')
+
 def main():
-    # (G, n, reverse_mapping) = load_graph('../resources/amazon/com-amazon.ungraph.txt')
-    # G = load_graph('andrej_test2.txt')
-    (G, n, reverse_mapping) = load_graph('example.txt')  #retrieve the graph with self-edges, total number of vertices and mapping to original indices
     t = 3                            # choice of t
+    print_no_newline('!IPORTANT! -> t = %s\n\n' % t)
+
+    # retrieve the graph with self-edges, total number of vertices and mapping to original indices
+    (G, n, reverse_mapping) = load_graph(infilename)
+
     P_t = get_P_t(G, t, n)           # the Pt matrix from the question set and
     Deg = dict()                     # degree of each vertex
     Ccard = dict()                   # the mapping of community indices to their respective cardinality
-    CP_t = dict()                    # the mapping of community indices to their respective P_t_C_.
+    CDP_t = dict()                   # the mapping of community indices to their respective D^-(1/2)*P_t_C.
     Cneig = dict()                   # the mapping of community indices to their "neighbour" communities (ones who share a direct edge to them)
     C1C2_to_sigma = dict()           # the mapping of two adjacent community indices to their respective sigma (assumed to be unique enough!)
     unsorted_sigma_to_C1C2 = dict()  # a mapping of sigmas (updated with new values regularly)
     merge_order = []                 # a list of tuples in set merge order ((C1,C2) means C1 and C2 were merged to C1)
+
 
     for v in range(n):
         Ccard[v] = 1.0
         Deg[v] = len(G[v])-1
         Cneig[v] = G[v]
         Cneig[v].remove(v) # remove the redundant "self" element from the set
-        CP_t[v] = P_t[v, :]
 
     D = get_sparse_D(n, Deg) # diagonal matrix of vertex degrees ^(-1/2)
+
+    for v in range(n):
+        CDP_t[v] = P_t[v, :]*D
 
     print_with_timestep('Setting up the structures...')
     visual_counter = 0
     for C1 in range(n):
         for C2 in Cneig[C1]:
             # ONLY FOR DEBUGGING
-            print_no_newline('|')
             visual_counter += 1
-            if visual_counter >= 200:
-                visual_counter -= 200
-                print_no_newline('\n')
-                print_with_timestep("")
+            if visual_counter >= 1000:
+                visual_counter -= 1000
+                print_with_timestep(" 1k later...")
 
             if not (C1, C2) in C1C2_to_sigma and C1 < C2:
-                sigmaC1C2 = delta_sigma_C1C2(n, Ccard[C1], Ccard[C2], D, CP_t[C1], CP_t[C2])
+                sigmaC1C2 = delta_sigma_C1C2(n, Ccard[C1], Ccard[C2], CDP_t[C1], CDP_t[C2])
                 C1C2_to_sigma[(C1, C2)] = sigmaC1C2
                 if sigmaC1C2 not in unsorted_sigma_to_C1C2:
                     unsorted_sigma_to_C1C2[sigmaC1C2] = SortedSet()
@@ -280,12 +288,10 @@ def main():
     print_with_timestep('About to start the algo...')
     for _ in range(n-1):
         # ONLY FOR DEBUGGING
-        print_no_newline('|')
         visual_counter += 1
-        if visual_counter >= 200:
-            visual_counter -= 200
-            print_no_newline('\n')
-            print_with_timestep('')
+        if visual_counter >= 1000:
+            visual_counter -= 1000
+            print_with_timestep(" 1k later...")
 
         # select the minimum element in the sorted set, record and remove it
         (C1, C2) = sigma_to_C1C2.viewvalues()[0][0]
@@ -297,7 +303,7 @@ def main():
             del sigma_to_C1C2[sigmaC1C2]
 
         # calculate the values for the new community
-        P_t_C3 = (Ccard[C1]*CP_t[C1] + Ccard[C2]*CP_t[C2])/(Ccard[C1] + Ccard[C2])
+        DP_t_C3 = (Ccard[C1]*CDP_t[C1] + Ccard[C2]*CDP_t[C2])/(Ccard[C1] + Ccard[C2])
         cardC3 = Ccard[C1] + Ccard[C2]
 
         # determine which tuples need updating and resolve maintenance things
@@ -322,12 +328,12 @@ def main():
 
         # update the sigma mappings
         for (newpair, C) in updatePairs:
-            newsigma = delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, sigmaC1C2, CP_t, n, D)
+            newsigma = delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, sigmaC1C2, CDP_t, n)
             add_elem(sigma_to_C1C2, C1C2_to_sigma, newpair, newsigma)
 
         # finally update the relevant values of the sets
-        CP_t[C1] = P_t_C3
-        del CP_t[C2]
+        CDP_t[C1] = DP_t_C3
+        del CDP_t[C2]
         neigC3 = Cneig[C1].union(Cneig[C2])
         neigC3.remove(C1)
         neigC3.remove(C2)
@@ -335,7 +341,14 @@ def main():
         del Cneig[C2]
         Ccard[C1] = cardC3
         del Ccard[C2]
+    print_with_timestep('Algo completed...')
 
+    print_no_newline('\n')
+    print_with_timestep('Merging order:')
+    for (idx, (a, b, sigma)) in enumerate(merge_order):
+        print_no_newline('%s: [%s, %s, %s]\n' % (idx, a, b, sigma))
+
+    # compute the optimal partitioning according to metric eta
     sigma_prev = 0
     max_eta = 0
     max_iter = 0
@@ -360,24 +373,32 @@ def main():
         del sets[b]
 
     print_no_newline('\n')
+    print_with_timestep('Optimal solution (eta = %s, max_iter = %s):' % (max_eta, max_iter))
     for idx in sets.keys():
         for i in range(len(sets[idx])):
-            print_no_newline(str (sets[idx][i]))
+            print_no_newline(str(sets[idx][i]))
             if i < len(sets[idx]) - 1:
                 print_no_newline(' ')
         print_no_newline('\n')
 
     #fancy_plot(n, merge_order, reverse_mapping)
 
+    outfile.close()
     return
 
 def print_no_newline(string):
-    import sys
     sys.stdout.write(string)
+    outfile.write(string)
     sys.stdout.flush()
+    outfile.flush()
 
 def print_with_timestep(string):
-    print('%s: %s' % (datetime.datetime.now(), string))
+    s = '%s: %s\n' % ('{:%H:%M:%S.%f}'.format(datetime.datetime.now()), string)
+    sys.stdout.write(s)
+    outfile.write(s)
+    sys.stdout.flush()
+    outfile.flush()
+
 
 if __name__ == '__main__':
     main()
