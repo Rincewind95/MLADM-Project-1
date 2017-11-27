@@ -18,6 +18,8 @@ from sortedcontainers import SortedDict
 from sortedcontainers import SortedSet
 from scipy.cluster import hierarchy
 import matplotlib.pyplot as plt
+import datetime
+
 
 def fancy_dendrogram(*args, **kwargs):
     max_d = kwargs.pop('max_d', None)
@@ -81,6 +83,7 @@ def fancy_plot(n, merge_order, reverse_mapping):
 
 
 def load_graph(location):
+    print_with_timestep('Loading G...')
     data = np.genfromtxt(location, skip_header=1, dtype=int)
     G = dict()
     points = SortedSet()
@@ -107,6 +110,7 @@ def load_graph(location):
         G[y].add(x)
     for x in range(n):
         G[x].add(x)
+    print_with_timestep('Finished loading G...')
     return (G, n, reverse_mapping)
 
 def get_sparse_identity(n):
@@ -122,6 +126,7 @@ def get_sparse_identity(n):
     S = csr_matrix((data, indices, indexptr), dtype=float)
     return S
 
+
 def get_sparse_D(n, Deg):
     # artificially modify G to have 'self-loops'
     indices = []
@@ -134,6 +139,7 @@ def get_sparse_D(n, Deg):
 
     S = csr_matrix((data, indices, indexptr), dtype=float)
     return S
+
 
 def exp_squaring(P, t, n):
     R = get_sparse_identity(n) # np.identity(node_cnt, dtype='float')
@@ -150,8 +156,9 @@ def exp_squaring(P, t, n):
                 t = (t - 1) / 2
         return P * R
 
+
 def get_P_t(Gself, t, n):
-    # artificially modify G to have 'self-loops'
+    print_with_timestep('Calculating P...')
     indices = []
     indexptr = [0]
     data = []
@@ -163,8 +170,11 @@ def get_P_t(Gself, t, n):
         indexptr.append(len(indices))
 
     P = csr_matrix((data, indices, indexptr), dtype=float)
+    print_with_timestep('Sqaring P...')
     P = exp_squaring(P, t, n)
+    print_with_timestep('Finished sqaring P...')
     return P
+
 
 def get_r2_C1C2(D, P_t_C1, P_t_C2):
     r = P_t_C1 * D - P_t_C2 * D
@@ -173,19 +183,33 @@ def get_r2_C1C2(D, P_t_C1, P_t_C2):
         res += elem*elem
     return res
 
+
 def delta_sigma_C1C2(n, cardC1, cardC2, D, P_t_C1, P_t_C2):
     r2_C1C2 = get_r2_C1C2(D, P_t_C1, P_t_C2)
     return ((cardC1 * cardC2) / ((cardC1 + cardC2)*n))*r2_C1C2
 
-def delta_sigma_C3C(n, cardC1, cardC2, cardC, D, P_t_C1, P_t_C2, P_t_C, deltaC1C2):
-    C1C = (cardC1 + cardC)*delta_sigma_C1C2(n, cardC1, cardC, D, P_t_C1, P_t_C)
-    C2C = (cardC2 + cardC)*delta_sigma_C1C2(n, cardC2, cardC, D, P_t_C2, P_t_C)
-    C1C2 = cardC*deltaC1C2
-    return (C1C + C2C - C1C2)/(cardC1 + cardC2 + cardC)
+
+def delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, deltaC1C2, CP_t, n, D):
+    C1C = get_min_pair(C1, C)
+    C2C = get_min_pair(C2, C)
+    if C1C in oldkeyMap.keys():
+        deltaC1C = oldkeyMap[get_min_pair(C1, C)]
+    else:
+        deltaC1C = delta_sigma_C1C2(n , Ccard[C1], Ccard[C], D, CP_t[C1], CP_t[C])
+    if C2C in oldkeyMap.keys():
+        deltaC2C = oldkeyMap[get_min_pair(C2, C)]
+    else:
+        deltaC2C = delta_sigma_C1C2(n , Ccard[C2], Ccard[C], D, CP_t[C2], CP_t[C])
+
+    C1C = (Ccard[C1] + Ccard[C])*deltaC1C
+    C2C = (Ccard[C2] + Ccard[C])*deltaC2C
+    C1C2 = Ccard[C]*deltaC1C2
+    return (C1C + C2C - C1C2)/(Ccard[C1] + Ccard[C2] + Ccard[C])
 
 
-def remove_elem(sigma_to_C1C2, C1C2_to_sigma, oldkey):
+def remove_elem(sigma_to_C1C2, C1C2_to_sigma, oldkeyMap, oldkey):
     sigmaC1C2 = C1C2_to_sigma[oldkey]
+    oldkeyMap[oldkey] = sigmaC1C2
     del C1C2_to_sigma[oldkey]
     sigma_to_C1C2[sigmaC1C2].remove(oldkey)
     if len(sigma_to_C1C2[sigmaC1C2]) <= 0:
@@ -201,10 +225,16 @@ def add_elem(sigma_to_C1C2, C1C2_to_sigma, newkey, newsigma):
     return
 
 
+def get_min_pair(C1, C2):
+    if C1 < C2:
+        return (C1, C2)
+    else:
+        return (C2, C1)
+
 def main():
-    (G, n, reverse_mapping) = load_graph('../resources/amazon/com-amazon.ungraph.txt')
+    # (G, n, reverse_mapping) = load_graph('../resources/amazon/com-amazon.ungraph.txt')
     # G = load_graph('andrej_test2.txt')
-    # (G, n, reverse_mapping) = load_graph('example.txt')  #retrieve the graph with self-edges, total number of vertices and mapping to original indices
+    (G, n, reverse_mapping) = load_graph('example.txt')  #retrieve the graph with self-edges, total number of vertices and mapping to original indices
     t = 3                            # choice of t
     P_t = get_P_t(G, t, n)           # the Pt matrix from the question set and
     Deg = dict()                     # degree of each vertex
@@ -224,8 +254,18 @@ def main():
 
     D = get_sparse_D(n, Deg) # diagonal matrix of vertex degrees ^(-1/2)
 
+    print_with_timestep('Setting up the structures...')
+    visual_counter = 0
     for C1 in range(n):
         for C2 in Cneig[C1]:
+            # ONLY FOR DEBUGGING
+            print_no_newline('|')
+            visual_counter += 1
+            if visual_counter >= 200:
+                visual_counter -= 200
+                print_no_newline('\n')
+                print_with_timestep("")
+
             if not (C1, C2) in C1C2_to_sigma and C1 < C2:
                 sigmaC1C2 = delta_sigma_C1C2(n, Ccard[C1], Ccard[C2], D, CP_t[C1], CP_t[C2])
                 C1C2_to_sigma[(C1, C2)] = sigmaC1C2
@@ -237,13 +277,15 @@ def main():
 
     visual_counter = 0
     # iterate through all merges
+    print_with_timestep('About to start the algo...')
     for _ in range(n-1):
         # ONLY FOR DEBUGGING
         print_no_newline('|')
         visual_counter += 1
-        if visual_counter > 200:
+        if visual_counter >= 200:
             visual_counter -= 200
             print_no_newline('\n')
+            print_with_timestep('')
 
         # select the minimum element in the sorted set, record and remove it
         (C1, C2) = sigma_to_C1C2.viewvalues()[0][0]
@@ -260,21 +302,18 @@ def main():
 
         # determine which tuples need updating and resolve maintenance things
         updatePoints = [C1, C2]
+        oldkeyMap = dict() # saved mapping of old keys to sigmas
         updatePairs = set()
         for A in updatePoints:
             neighbours = Cneig[A]
             for B in neighbours:
-                oldkey = (A, B)
-                if A > B:
-                    oldkey = (B, A)
+                oldkey = get_min_pair(A, B)
                 if oldkey == (C1, C2):
                     continue
                 newkey = oldkey
                 if A == C2:
-                    newkey = (C1, B)
-                    if C1 > B:
-                        newkey = (B, C1)
-                remove_elem(sigma_to_C1C2, C1C2_to_sigma, oldkey)
+                    newkey = get_min_pair(C1, B)
+                remove_elem(sigma_to_C1C2, C1C2_to_sigma, oldkeyMap, oldkey)
                 if not (newkey, B) in updatePairs:
                     updatePairs.add((newkey, B))
                 if (A == C2):
@@ -283,7 +322,7 @@ def main():
 
         # update the sigma mappings
         for (newpair, C) in updatePairs:
-            newsigma = delta_sigma_C3C(n, Ccard[C1], Ccard[C2], Ccard[C], D, CP_t[C1], CP_t[C2], CP_t[C], sigmaC1C2)
+            newsigma = delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, sigmaC1C2, CP_t, n, D)
             add_elem(sigma_to_C1C2, C1C2_to_sigma, newpair, newsigma)
 
         # finally update the relevant values of the sets
@@ -320,6 +359,7 @@ def main():
         sets[a] = sets[a].union(sets[b])
         del sets[b]
 
+    print_no_newline('\n')
     for idx in sets.keys():
         for i in range(len(sets[idx])):
             print_no_newline(str (sets[idx][i]))
@@ -335,6 +375,9 @@ def print_no_newline(string):
     import sys
     sys.stdout.write(string)
     sys.stdout.flush()
+
+def print_with_timestep(string):
+    print('%s: %s' % (datetime.datetime.now(), string))
 
 if __name__ == '__main__':
     main()
