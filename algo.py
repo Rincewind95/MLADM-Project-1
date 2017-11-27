@@ -17,10 +17,14 @@ from scipy import *
 from sortedcontainers import SortedDict
 from sortedcontainers import SortedSet
 from scipy.cluster import hierarchy
+from collections import defaultdict
+from collections import namedtuple
 import matplotlib.pyplot as plt
 import datetime
 import sys
 
+# special struct used for the sparse vector
+SparseVec = namedtuple('SparseVec', ['indices', 'value'])
 
 def fancy_dendrogram(*args, **kwargs):
     max_d = kwargs.pop('max_d', None)
@@ -165,10 +169,10 @@ def get_P_t(Gself, t, n):
 
 
 def get_r2_C1C2(DP_t_C1, DP_t_C2):
-    r = DP_t_C1 - DP_t_C2
     res = 0
-
-    for elem in r.data:
+    indices = DP_t_C1.indices.union(DP_t_C2.indices)
+    for index in indices:
+        elem = DP_t_C1.value[index] - DP_t_C2.value[index]
         res += elem*elem
     return res
 
@@ -215,13 +219,12 @@ def get_min_pair(C1, C2):
 
 
 #infilename = 'testing/amazon/com-amazon.ungraph.txt'
-#infilename = 'testing/examples/example.txt'
-#infilename = 'gen_graph_15-23-52'
-infilename = '18-18-55_gen_graph'
+infilename = 'example'
+#infilename = '18-18-55_gen_graph'
 outfilename = '%s_output' % '{:%H-%M-%S}'.format(datetime.datetime.now())
 calcfilename = '%s_calc_%s' % ('{:%H-%M-%S}'.format(datetime.datetime.now()),infilename)
 outdir = 'out/'
-indir = 'out/'
+indir = 'testing/examples/'
 txt = '.txt'
 infilename = indir + infilename + txt
 outfilename = outdir + outfilename + txt
@@ -267,14 +270,19 @@ def main():
     for v in range(n):
         D[v] = 1.0 / sqrt(Deg[v] + 1)
 
+
     visual_counter = 0
     for v in range(n):
         visual_counter = increment_visual_counter(visual_counter)
         pt = P_t[v, :]
         indexes = pt.indices
-        for (loc, idx) in enumerate(indexes):
-            pt.data[loc] *= D[idx]
-        CDP_t[v] = pt
+        data = pt.data
+        CDP_t[v] = SparseVec(indices=set(),
+                             value=defaultdict(lambda: 0.0))
+        for (pos, index) in enumerate(indexes):
+            CDP_t[v].indices.add(index)
+            CDP_t[v].value[index] = data[pos] * D[index]
+
     print_with_timestep('Finished calculating D and DP_t...')
 
     print_with_timestep('Explicitly delete G, P_t and Deg...')
@@ -317,8 +325,13 @@ def main():
             del sigma_to_C1C2[sigmaC1C2]
 
         # calculate the values for the new community
-        DP_t_C3 = (Ccard[C1]*CDP_t[C1] + Ccard[C2]*CDP_t[C2])/(Ccard[C1] + Ccard[C2])
+        DP_t_C3 = SparseVec(indices=CDP_t[C1].indices.union(CDP_t[C2].indices),
+                            value=defaultdict(lambda: 0.0))
+        c1card = Ccard[C1]
+        c2card = Ccard[C2]
         cardC3 = Ccard[C1] + Ccard[C2]
+        for index in DP_t_C3.indices:
+            DP_t_C3.value[index] = (c1card*CDP_t[C1].value[index] + c2card*CDP_t[C2].value[index])/cardC3
 
         # determine which tuples need updating and resolve maintenance things
         updatePoints = [C1, C2]
