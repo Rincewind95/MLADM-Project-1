@@ -25,7 +25,7 @@ def get_beta(Qe, dinC, cardC, k):
     top = 0
     bot = 0
     for Ci in range(k):
-        tmp = (dinC[Ci]*cardC[Ci])
+        tmp = dinC[Ci]
         top += tmp * tmp
         bot += tmp
     bot = bot * bot
@@ -41,14 +41,19 @@ def main():
     # Qe = 0.2        # wanted modularity - determines the value of beta
 
     # if the graph is homogenious
-    N = 10000
-    gamma = 0.5
-    k = int(pow(N, gamma))
-    alpha = 4
+    N = 300                         # n300, n1000, n3000, n10000
+    gamma = 0.6                     # g02,  g04,  g06,  g08
+
+    k = int(round(pow(N, gamma)))   # k3,   k10,  k30,  k96   <- n300
+                                    # k4,   k16,  k63,  k251  <- n1000
+                                    # k5,   k25,  k122, k605  <- n3000
+                                    # k6,   k40,  k251, k1584 <- n10000
+
+    alpha = 4                       # a2, a4, a6
     cardC = []
     dinC = []
     doutC = []
-    Qe = 0.8
+    Qe = 0.2                       # q02, q04, q06,     q08
 
     for i in range(k):
         cardC.append(int(N/k))
@@ -69,7 +74,8 @@ def main():
 
     dir = 'out/'
     txt = '.txt'
-    outfilebase = '%s_gen' % '{:%H-%M-%S}'.format(datetime.datetime.now())
+  # outfilebase = '%s_gen' % '{:%H-%M-%S}'.format(datetime.datetime.now())
+    outfilebase = 'n%s_gamma%s_alpha%s_qe%s_(k%s)_%s_gen' % (N, gamma, alpha, Qe, k, '{:%H-%M-%S}'.format(datetime.datetime.now()))
     outfilepath = dir + outfilebase + '_graph' + txt
     outfile = open(outfilepath, 'w')
     outfile.write("# k = %s\n" % k)

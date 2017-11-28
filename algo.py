@@ -21,8 +21,14 @@ from collections import defaultdict
 from collections import namedtuple
 import matplotlib.pyplot as plt
 import datetime
+import time
 import sys
-import numpy as np
+import numpy as np#
+#import pycuda.autoinit
+#import pycuda.gpuarray as gpuarray
+#import skcuda.linalg as linalg
+#import skcuda.misc as misc
+#import skcuda
 
 # special struct used for the sparse vector
 SparseVec = namedtuple('SparseVec', ['indices', 'value'])
@@ -195,12 +201,56 @@ def sorted_union(a, b):
     return l
 
 
+run_ms1 = 0
+run_cnt = 0
+run_elem = 0
+
+
 def get_r2_C1C2(DP_t_C1, DP_t_C2):
+    global run_ms1
+    global run_ms2
+    global run_cnt
+    global run_elem
+    run_ms1 -= int(round(time.time() * 1000))
+
     res = 0
-    indices = sorted_union(DP_t_C1.indices, DP_t_C2.indices)
-    for index in indices:
-        elem = DP_t_C1.value[index] - DP_t_C2.value[index]
+    a = DP_t_C1.indices
+    b = DP_t_C2.indices
+    idxa = 0
+    idxb = 0
+    lena = len(a)
+    lenb = len(b)
+    while idxa < lena and idxb < lenb:
+        if a[idxa] < b[idxb]:
+            idx = a[idxa]
+            idxa += 1
+        elif a[idxa] > b[idxb]:
+            idx = b[idxb]
+            idxb += 1
+        else:
+            idx = a[idxa]
+            idxa += 1
+            idxb += 1
+        elem = DP_t_C1.value[idx] - DP_t_C2.value[idx]
+        res += elem * elem
+        run_elem += 1
+
+    run_elem += lena-idxa + lenb-idxb
+
+    while idxa < lena:
+        idx = a[idxa]
+        idxa += 1
+        elem = DP_t_C1.value[idx] - DP_t_C2.value[idx]
+        res += elem * elem
+    while idxb < lenb:
+        idx = b[idxb]
+        idxb += 1
+        elem = DP_t_C1.value[idx] - DP_t_C2.value[idx]
         res += elem*elem
+
+    run_ms1 += int(round(time.time() * 1000))
+    run_cnt += 1
+
     return res
 
 
@@ -245,14 +295,14 @@ def get_min_pair(C1, C2):
         return (C2, C1)
 
 
-#infilename = 'com-amazon.ungraph'
-infilename = 'example'
+infilename = 'com-amazon.ungraph'
+#infilename = 'example'
 #infilename = '18-18-55_gen_graph'
 outfilename = '%s_output' % '{:%H-%M-%S}'.format(datetime.datetime.now())
 calcfilename = '%s_calc_%s' % ('{:%H-%M-%S}'.format(datetime.datetime.now()),infilename)
 outdir = 'out/'
-indir = 'testing/examples/'
-#indir = 'testing/amazon/'
+#indir = 'testing/examples/'
+indir = 'testing/amazon/'
 txt = '.txt'
 infilename = indir + infilename + txt
 outfilename = outdir + outfilename + txt
@@ -260,15 +310,10 @@ calcfilename = outdir + calcfilename + txt
 outfile = open(outfilename, 'w')
 calcfile = open(calcfilename, 'w')
 
-def increment_visual_counter(visual_counter):
-    visual_counter += 1
-    if visual_counter % 1000 == 0:
-        print_with_timestep("%sk done..." % (visual_counter / 1000))
-    return visual_counter
-
 
 def main():
-    t = 3                            # choice of t
+
+    t = 2                            # choice of t
     print_no_newline('!IMPORTANT! -> t = %s\n\n' % t)
 
     # retrieve the graph with self-edges, total number of vertices and mapping to original indices
@@ -301,7 +346,7 @@ def main():
 
     visual_counter = 0
     for v in range(n):
-        visual_counter = increment_visual_counter(visual_counter)
+        visual_counter = increment_visual_counter(visual_counter, 0)
         pt = P_t[v, :]
         indexes = pt.indices
         data = pt.data
@@ -312,6 +357,7 @@ def main():
             CDP_t[v].value[index] = data[pos] * D[index]
         CDP_t[v].indices.sort()
 
+    increment_visual_counter(visual_counter, 1)
     print_with_timestep('Finished calculating D and DP_t...')
 
     print_with_timestep('Explicitly delete G, P_t and Deg...')
@@ -327,7 +373,7 @@ def main():
     visual_counter = 0
     for C1 in range(n):
         for C2 in Cneig[C1]:
-            visual_counter = increment_visual_counter(visual_counter)
+            visual_counter = increment_visual_counter(visual_counter, 0)
 
             if not (C1, C2) in C1C2_to_sigma and C1 < C2:
                 sigmaC1C2 = delta_sigma_C1C2(n, Ccard[C1], Ccard[C2], CDP_t[C1], CDP_t[C2])
@@ -336,13 +382,14 @@ def main():
                     unsorted_sigma_to_C1C2[sigmaC1C2] = SortedSet()
                 unsorted_sigma_to_C1C2[sigmaC1C2].add((C1, C2))
 
+    increment_visual_counter(visual_counter, 1)
     sigma_to_C1C2 = SortedDict(unsorted_sigma_to_C1C2) # a constantly sorted mapping of sigmas (updated with new values regularly)
 
     visual_counter = 0
     # iterate through all merges
     print_with_timestep('About to start the algo...')
     for _ in range(n-1):
-        visual_counter = increment_visual_counter(visual_counter)
+        visual_counter = increment_visual_counter(visual_counter, 0)
 
         # select the minimum element in the sorted set, record and remove it
         (C1, C2) = sigma_to_C1C2.viewvalues()[0][0]
@@ -397,6 +444,8 @@ def main():
         del Cneig[C2]
         Ccard[C1] = cardC3
         del Ccard[C2]
+
+    increment_visual_counter(visual_counter, 1)
     print_with_timestep('Algo completed...')
 
     print_no_newline('\n')
@@ -463,6 +512,26 @@ def print_with_timestep(string):
     outfile.write(s)
     sys.stdout.flush()
     outfile.flush()
+
+def increment_visual_counter(visual_counter, forcedprint):
+    global run_cnt
+    global run_ms1
+    global run_elem
+
+    visual_counter += 1
+    if visual_counter % 1000 == 0:
+        print_with_timestep("%sk done..." % (visual_counter / 1000))
+
+        s = '----------------------------------------> run_cnt=%s, run_ms1=%s, run_elem=%s\n' % (run_cnt , run_ms1, run_elem )
+        sys.stdout.write(s)
+        outfile.write(s)
+        sys.stdout.flush()
+        outfile.flush()
+        run_cnt = 0
+        run_ms1 = 0
+        run_elem = 0
+
+    return visual_counter
 
 if __name__ == '__main__':
     main()

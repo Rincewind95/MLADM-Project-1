@@ -2,9 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb25bedc-b736-4197-a6c2-6144b6348ef0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/RandomWalks.7z" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/03-00-50_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/03-00-50_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/03-01-36_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/03-01-36_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-18-55_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-18-55_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/19-55-16_calc_18-18-55_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/19-55-16_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-10-39_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-10-39_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-44-29_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-44-29_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-44-42_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-44-42_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-45-58_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-45-58_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-46-05_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-46-05_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-03-40_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-03-40_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-06-13_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-06-13_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-07-11_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-07-11_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-07-26_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-07-26_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-10-27_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-10-27_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-11-44_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-11-44_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-16-15_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-16-15_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-17-42_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-17-42_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-20-37_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-20-37_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-25-04_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-25-04_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-25-13_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-25-13_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-30-13_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-30-13_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-30-51_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-30-51_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-31-12_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-31-12_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/Rprime_18-18-55_gen_calc_-_19-55-16_calc_18-18-55_gen_graph.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algo.py" afterPath="$PROJECT_DIR$/algo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_generator.py" afterPath="$PROJECT_DIR$/graph_generator.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,22 +62,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="algo.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="algo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="468" column="0" lean-forward="true" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
               <folding>
                 <element signature="e#305#323#0" expanded="true" />
-                <element signature="e#863#1703#0" expanded="false" />
-                <element signature="e#1759#2554#0" expanded="false" />
-                <element signature="e#2587#3330#0" expanded="false" />
-                <element signature="e#3365#3650#0" expanded="false" />
-                <element signature="e#3684#4014#0" expanded="false" />
-                <element signature="e#4047#4532#0" expanded="false" />
-                <element signature="e#4563#5071#0" expanded="false" />
-                <element signature="e#6347#6514#0" expanded="false" />
-                <element signature="e#6547#6619#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -39,7 +77,7 @@
       <file leaf-file-name="linalg.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/skcuda/linalg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
+            <state relative-caret-position="10183">
               <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
               <folding />
             </state>
@@ -58,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/graph_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="679">
-              <caret line="56" column="63" lean-forward="false" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+            <state relative-caret-position="731">
+              <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
               <folding>
                 <element signature="e#304#319#0" expanded="true" />
               </folding>
@@ -100,6 +138,9 @@
       <find>get_sparse_identity</find>
       <find>enumera</find>
       <find>keys()</find>
+      <find>t</find>
+      <find>3</find>
+      <find>max_alloc + 1</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -111,14 +152,14 @@
         <option value="$PROJECT_DIR$/testing/determine_R_prime.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/determine_R_prime.py" />
-        <option value="$PROJECT_DIR$/graph_generator.py" />
         <option value="$PROJECT_DIR$/algo.py" />
+        <option value="$PROJECT_DIR$/graph_generator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="458" />
-    <option name="y" value="123" />
+    <option name="x" value="303" />
+    <option name="y" value="36" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -138,19 +179,14 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="RandomWalks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RandomWalks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="RandomWalks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RandomWalks" type="462c0819:PsiDirectoryNode" />
-              <item name="testing" type="462c0819:PsiDirectoryNode" />
+              <item name="RandomWalks 5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RandomWalks 5" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -159,7 +195,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -285,13 +322,13 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18796992" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2916225" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52492046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -310,32 +347,32 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>443</line>
+          <line>492</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>432</line>
+          <line>481</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>436</line>
+          <line>485</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>182</line>
+          <line>188</line>
           <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>159</line>
+          <line>165</line>
           <option name="timeStamp" value="132" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>162</line>
+          <line>168</line>
           <option name="timeStamp" value="133" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -363,19 +400,28 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="188" column="9" lean-forward="false" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
-            <element signature="e#863#1703#0" expanded="false" />
-            <element signature="e#1759#2554#0" expanded="false" />
-            <element signature="e#2587#3330#0" expanded="false" />
-            <element signature="e#3365#3650#0" expanded="false" />
-            <element signature="e#3684#4014#0" expanded="false" />
-            <element signature="e#4047#4532#0" expanded="false" />
-            <element signature="e#4563#5071#0" expanded="false" />
-            <element signature="e#6347#6514#0" expanded="false" />
-            <element signature="e#6547#6619#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/skcuda/linalg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10540">
+          <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="63" lean-forward="false" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -390,29 +436,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
+    <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#305#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/skcuda/linalg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10183">
+          <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="63" lean-forward="false" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1088">
+          <caret line="188" column="9" lean-forward="false" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
+          <folding>
+            <element signature="e#305#323#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
           <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
-            <element signature="e#863#1703#0" expanded="false" />
-            <element signature="e#1759#2554#0" expanded="false" />
-            <element signature="e#2587#3330#0" expanded="false" />
-            <element signature="e#3365#3650#0" expanded="false" />
-            <element signature="e#3684#4014#0" expanded="false" />
-            <element signature="e#4047#4532#0" expanded="false" />
-            <element signature="e#4563#5071#0" expanded="false" />
-            <element signature="e#6347#6514#0" expanded="false" />
-            <element signature="e#6547#6619#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -427,14 +515,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
@@ -451,15 +532,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
-            <element signature="e#863#1703#0" expanded="false" />
-            <element signature="e#1759#2554#0" expanded="false" />
-            <element signature="e#2587#3330#0" expanded="false" />
-            <element signature="e#3365#3650#0" expanded="false" />
-            <element signature="e#3684#4014#0" expanded="false" />
-            <element signature="e#4047#4532#0" expanded="false" />
-            <element signature="e#4563#5071#0" expanded="false" />
-            <element signature="e#6347#6514#0" expanded="false" />
-            <element signature="e#6547#6619#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -560,35 +632,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/graph_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="679">
-          <caret line="56" column="63" lean-forward="false" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
-          <folding>
-            <element signature="e#304#319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/pycuda/gpuarray.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
           <caret line="974" column="0" lean-forward="false" selection-start-line="974" selection-start-column="0" selection-end-line="974" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/skcuda/linalg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
+        <state relative-caret-position="10183">
           <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
           <folding />
         </state>
@@ -596,19 +650,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="468" column="0" lean-forward="true" selection-start-line="468" selection-start-column="0" selection-end-line="468" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
-            <element signature="e#863#1703#0" expanded="false" />
-            <element signature="e#1759#2554#0" expanded="false" />
-            <element signature="e#2587#3330#0" expanded="false" />
-            <element signature="e#3365#3650#0" expanded="false" />
-            <element signature="e#3684#4014#0" expanded="false" />
-            <element signature="e#4047#4532#0" expanded="false" />
-            <element signature="e#4563#5071#0" expanded="false" />
-            <element signature="e#6347#6514#0" expanded="false" />
-            <element signature="e#6547#6619#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="61" column="11" lean-forward="true" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
           </folding>
         </state>
       </provider>
