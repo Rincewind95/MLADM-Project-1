@@ -22,12 +22,7 @@ from collections import namedtuple
 import matplotlib.pyplot as plt
 import datetime
 import sys
-import numpy as np#
-#import pycuda.autoinit
-#import pycuda.gpuarray as gpuarray
-#import skcuda.linalg as linalg
-#import skcuda.misc as misc
-#import skcuda
+import numpy as np
 
 # special struct used for the sparse vector
 SparseVec = namedtuple('SparseVec', ['indices', 'value'])
@@ -199,23 +194,10 @@ def sorted_union(a, b):
         idxb += 1
     return l
 
-#linalg.init()
+
 def get_r2_C1C2(DP_t_C1, DP_t_C2):
     res = 0
     indices = sorted_union(DP_t_C1.indices, DP_t_C2.indices)
-    #if len(indices) > 1000:
-    #    a = []
-    #    b = []
-    #    for index in indices:
-    #        a.append(DP_t_C1.value[index])
-    #        b.append(DP_t_C2.value[index])
-    #    npa = np.array(a)
-    #    npb = np.array(b)
-    #    a_gpu = gpuarray.to_gpu(npa)
-    #    b_gpu = gpuarray.to_gpu(npb)
-    #    c_gpu = skcuda.misc.subtract(a_gpu, b_gpu)
-    #    res = linalg.dot(c_gpu, c_gpu)
-    #else:
     for index in indices:
         elem = DP_t_C1.value[index] - DP_t_C2.value[index]
         res += elem*elem
