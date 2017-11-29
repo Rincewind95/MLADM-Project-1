@@ -2,55 +2,142 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb25bedc-b736-4197-a6c2-6144b6348ef0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/03-00-50_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/03-00-50_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/03-01-36_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/03-01-36_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-18-55_gen_calc.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/18-18-55_gen_graph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/19-55-16_calc_18-18-55_gen_graph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/19-55-16_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-10-39_calc_com-amazon.ungraph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-10-39_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-44-29_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-44-29_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-44-42_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-44-42_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-45-58_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-45-58_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-46-05_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/22-46-05_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-03-40_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-03-40_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-06-13_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-06-13_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-07-11_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-07-11_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-07-26_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-07-26_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-10-27_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-10-27_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-11-44_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-11-44_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-16-15_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-16-15_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-17-42_calc_com-amazon.ungraph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-17-42_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-20-37_calc_com-amazon.ungraph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-20-37_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-25-04_calc_com-amazon.ungraph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-25-04_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-25-13_calc_com-amazon.ungraph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-25-13_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-30-13_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-30-13_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-30-51_calc_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-30-51_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-31-12_calc_com-amazon.ungraph.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/23-31-12_output.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/Rprime_18-18-55_gen_calc_-_19-55-16_calc_18-18-55_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/03-00-50_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/03-00-50_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/03-01-36_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/03-01-36_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-14-55_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-14-55_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-28-09_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-28-09_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-29-29_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-29-29_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-29-35_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-29-35_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-30-43_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-30-43_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-30-48_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-30-48_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-31-12_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-31-12_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-39-13_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/04-39-13_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/18-18-55_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/18-18-55_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/19-55-16_calc_18-18-55_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/19-55-16_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-10-39_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-10-39_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-44-29_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-44-29_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-44-42_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-44-42_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-45-58_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-45-58_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-46-05_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/22-46-05_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-03-40_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-03-40_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-06-13_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-06-13_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-07-11_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-07-11_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-07-26_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-07-26_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-10-27_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-10-27_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-11-44_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-11-44_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-16-15_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-16-15_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-17-42_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-17-42_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-20-37_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-20-37_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-25-04_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-25-04_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-25-13_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-25-13_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-30-13_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-30-13_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-30-51_calc_example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-30-51_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-31-12_calc_com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/23-31-12_output.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out (pre 2017-11-28)/Rprime_18-18-55_gen_calc_-_19-55-16_calc_18-18-55_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n279_gamma0.6_alpha2_qe0.2_(k31)_14-46-49_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n279_gamma0.6_alpha2_qe0.2_(k31)_14-46-49_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n279_gamma0.6_alpha2_qe0.4_(k31)_14-46-54_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n279_gamma0.6_alpha2_qe0.4_(k31)_14-46-54_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n279_gamma0.6_alpha2_qe0.6_(k31)_14-47-06_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n279_gamma0.6_alpha2_qe0.6_(k31)_14-47-06_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.2_(k3)_14-37-05_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.2_(k3)_14-37-05_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.4_(k3)_14-39-05_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.4_(k3)_14-39-05_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.6_(k3)_14-39-15_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.6_(k3)_14-39-15_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_15-52-07_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_15-54-27_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_15-54-52_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_15-55-05_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_15-55-09_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_15-55-48_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-12-05_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-12-05_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-13-35_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-13-35_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-15-12_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-15-12_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-16-14_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-16-39_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-16-39_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha2_qe0.8_(k3)_16-18-11_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha4_qe0.2_(k3)_14-43-52_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha4_qe0.2_(k3)_14-43-52_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha4_qe0.4_(k3)_14-44-12_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha4_qe0.4_(k3)_14-44-12_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha4_qe0.6_(k3)_14-44-22_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha4_qe0.6_(k3)_14-44-22_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha6_qe0.2_(k3)_14-44-31_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha6_qe0.2_(k3)_14-44-31_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha6_qe0.4_(k3)_14-44-40_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha6_qe0.4_(k3)_14-44-40_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha6_qe0.6_(k3)_14-44-47_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.2_alpha6_qe0.6_(k3)_14-44-47_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha2_qe0.2_(k10)_14-45-31_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha2_qe0.2_(k10)_14-45-31_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha2_qe0.4_(k10)_14-45-37_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha2_qe0.4_(k10)_14-45-37_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha2_qe0.6_(k10)_14-45-43_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha2_qe0.6_(k10)_14-45-43_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha4_qe0.2_(k10)_14-45-51_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha4_qe0.2_(k10)_14-45-51_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha4_qe0.4_(k10)_14-45-59_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha4_qe0.4_(k10)_14-45-59_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha4_qe0.6_(k10)_14-46-04_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha4_qe0.6_(k10)_14-46-04_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha6_qe0.2_(k10)_14-46-14_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha6_qe0.2_(k10)_14-46-14_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha6_qe0.4_(k10)_14-46-30_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha6_qe0.4_(k10)_14-46-30_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha6_qe0.6_(k10)_14-46-35_gen_calc.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/n300_gamma0.4_alpha6_qe0.6_(k10)_14-46-35_gen_graph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/amazon/com-amazon.all.dedup.cmty.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/amazon/com-amazon.all.dedup.cmty.txt.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/amazon/com-amazon.top5000.cmty.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/amazon/com-amazon.top5000.cmty.txt.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/amazon/com-amazon.ungraph.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/amazon/com-amazon.ungraph.txt.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/examples/example.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/examples/test1.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/examples/test2.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/facebook/facebook.tar.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/facebook/facebook_combined.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/testing/facebook/facebook_combined.txt.gz" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/algo.py" afterPath="$PROJECT_DIR$/algo.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/determine_R_prime.py" afterPath="$PROJECT_DIR$/determine_R_prime.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/graph_generator.py" afterPath="$PROJECT_DIR$/graph_generator.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,21 +152,23 @@
       <file leaf-file-name="algo.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/algo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+            <state relative-caret-position="389">
+              <caret line="384" column="23" lean-forward="false" selection-start-line="384" selection-start-column="23" selection-end-line="384" selection-end-column="23" />
               <folding>
                 <element signature="e#305#323#0" expanded="true" />
+                <element signature="e#1011#1851#0" expanded="false" />
+                <element signature="e#1907#2702#0" expanded="false" />
+                <element signature="e#2735#3496#0" expanded="false" />
+                <element signature="e#3536#3819#0" expanded="false" />
+                <element signature="e#3858#4193#0" expanded="false" />
+                <element signature="e#4231#4719#0" expanded="false" />
+                <element signature="e#4750#5258#0" expanded="false" />
+                <element signature="e#5339#6373#0" expanded="false" />
+                <element signature="e#6439#6541#0" expanded="false" />
+                <element signature="e#6628#7041#0" expanded="false" />
+                <element signature="e#7113#7345#0" expanded="false" />
+                <element signature="e#7414#7581#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="linalg.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/skcuda/linalg.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10183">
-              <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -87,8 +176,8 @@
       <file leaf-file-name="determine_R_prime.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+            <state relative-caret-position="124">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding>
                 <element signature="e#304#319#0" expanded="true" />
               </folding>
@@ -96,14 +185,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="npyio.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/numpy/lib/npyio.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="31348">
+              <caret line="1866" column="0" lean-forward="false" selection-start-line="1866" selection-start-column="0" selection-end-line="1866" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graph_generator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/graph_generator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="548">
-              <caret line="194" column="51" lean-forward="true" selection-start-line="194" selection-start-column="51" selection-end-line="194" selection-end-column="51" />
-              <folding>
-                <element signature="e#304#319#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transform_communities.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/transform_communities.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -119,9 +226,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Deg</find>
-      <find>node_cnt</find>
-      <find>len(G</find>
       <find>Ccard</find>
       <find>reverse_mapping</find>
       <find>CP_t</find>
@@ -135,12 +239,23 @@
       <find>random</find>
       <find>keys</find>
       <find>key</find>
-      <find>get_sparse_identity</find>
       <find>enumera</find>
       <find>keys()</find>
       <find>t</find>
       <find>3</find>
       <find>max_alloc + 1</find>
+      <find>n</find>
+      <find>range</find>
+      <find>get_sparse_identity</find>
+      <find>get_P_t</find>
+      <find>range(</find>
+      <find>infilename</find>
+      <find>print_no_new</find>
+      <find>print_with_time</find>
+      <find>print_no_newline</find>
+      <find>print_calcfile</find>
+      <find>##</find>
+      <find>gamma</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,17 +266,16 @@
       <list>
         <option value="$PROJECT_DIR$/testing/determine_R_prime.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/determine_R_prime.py" />
         <option value="$PROJECT_DIR$/algo.py" />
+        <option value="$PROJECT_DIR$/determine_R_prime.py" />
         <option value="$PROJECT_DIR$/graph_generator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="303" />
-    <option name="y" value="36" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="323" />
+    <option name="width" value="1604" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -179,19 +293,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="RandomWalks 5" type="b2602c69:ProjectViewProjectNode" />
-              <item name="RandomWalks 5" type="462c0819:PsiDirectoryNode" />
+              <item name="RandomWalks 6" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RandomWalks 6" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -215,7 +329,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.graph_generator">
+  <component name="RunManager" selected="Python.algo">
     <configuration name="algo" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -292,10 +406,10 @@
     </list>
     <recent_temporary>
       <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.graph_generator" />
-        <item index="1" class="java.lang.String" itemvalue="Python.algo" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.determine_R_prime" />
+        <item index="0" class="java.lang.String" itemvalue="Python.algo" />
+        <item index="1" class="java.lang.String" itemvalue="Python.determine_R_prime" />
+        <item index="2" class="java.lang.String" itemvalue="Python.graph_generator" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -317,17 +431,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18769883" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22693531" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979852" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52492046" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36055142" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -347,68 +460,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>492</line>
+          <line>582</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>481</line>
+          <line>569</line>
           <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/algo.py</url>
-          <line>485</line>
+          <line>574</line>
           <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>198</line>
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>171</line>
-          <option name="timeStamp" value="132" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>174</line>
-          <option name="timeStamp" value="133" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/determine_R_prime.py</url>
-          <line>44</line>
-          <option name="timeStamp" value="138" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/determine_R_prime.py</url>
-          <line>33</line>
+          <line>42</line>
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="147" />
+          <line>119</line>
+          <option name="timeStamp" value="155" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>132</line>
-          <option name="timeStamp" value="148" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>23</line>
-          <option name="timeStamp" value="149" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="150" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph_generator.py</url>
-          <line>30</line>
-          <option name="timeStamp" value="151" />
+          <url>file://$PROJECT_DIR$/algo.py</url>
+          <line>480</line>
+          <option name="timeStamp" value="164" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -418,7 +496,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="152" />
+      <option name="time" value="166" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -429,6 +507,66 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
+            <element signature="e#1011#1851#0" expanded="false" />
+            <element signature="e#1907#2702#0" expanded="false" />
+            <element signature="e#2735#3496#0" expanded="false" />
+            <element signature="e#3536#3819#0" expanded="false" />
+            <element signature="e#3858#4193#0" expanded="false" />
+            <element signature="e#4231#4719#0" expanded="false" />
+            <element signature="e#4750#5258#0" expanded="false" />
+            <element signature="e#5339#6373#0" expanded="false" />
+            <element signature="e#6439#6541#0" expanded="false" />
+            <element signature="e#6628#7041#0" expanded="false" />
+            <element signature="e#7113#7345#0" expanded="false" />
+            <element signature="e#7414#7581#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1802">
+          <caret line="106" column="0" lean-forward="true" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/numpy/lib/npyio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31348">
+          <caret line="1866" column="0" lean-forward="false" selection-start-line="1866" selection-start-column="0" selection-end-line="1866" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4607">
+          <caret line="271" column="20" lean-forward="false" selection-start-line="271" selection-start-column="20" selection-end-line="271" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4046">
+          <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+          <folding>
+            <element signature="e#305#323#0" expanded="true" />
+            <element signature="e#1011#1851#0" expanded="false" />
+            <element signature="e#1907#2702#0" expanded="false" />
+            <element signature="e#2735#3496#0" expanded="false" />
+            <element signature="e#3536#3819#0" expanded="false" />
+            <element signature="e#3858#4193#0" expanded="false" />
+            <element signature="e#4231#4719#0" expanded="false" />
+            <element signature="e#4750#5258#0" expanded="false" />
+            <element signature="e#5339#6373#0" expanded="false" />
+            <element signature="e#6439#6541#0" expanded="false" />
+            <element signature="e#6628#7041#0" expanded="false" />
+            <element signature="e#7113#7345#0" expanded="false" />
+            <element signature="e#7414#7581#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -437,7 +575,61 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10540">
           <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/graph_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="76" column="31" lean-forward="true" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transform_communities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/algo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#305#323#0" expanded="true" />
+            <element signature="e#1011#1851#0" expanded="false" />
+            <element signature="e#1907#2702#0" expanded="false" />
+            <element signature="e#2735#3496#0" expanded="false" />
+            <element signature="e#3536#3819#0" expanded="false" />
+            <element signature="e#3858#4193#0" expanded="false" />
+            <element signature="e#4231#4719#0" expanded="false" />
+            <element signature="e#4750#5258#0" expanded="false" />
+            <element signature="e#5339#6373#0" expanded="false" />
+            <element signature="e#6439#6541#0" expanded="false" />
+            <element signature="e#6628#7041#0" expanded="false" />
+            <element signature="e#7113#7345#0" expanded="false" />
+            <element signature="e#7414#7581#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/skcuda/linalg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10540">
+          <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -445,9 +637,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="63" lean-forward="false" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
-          <folding>
-            <element signature="e#304#319#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -467,6 +657,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
+            <element signature="e#1011#1851#0" expanded="false" />
+            <element signature="e#1907#2702#0" expanded="false" />
+            <element signature="e#2735#3496#0" expanded="false" />
+            <element signature="e#3536#3819#0" expanded="false" />
+            <element signature="e#3858#4193#0" expanded="false" />
+            <element signature="e#4231#4719#0" expanded="false" />
+            <element signature="e#4750#5258#0" expanded="false" />
+            <element signature="e#5339#6373#0" expanded="false" />
+            <element signature="e#6439#6541#0" expanded="false" />
+            <element signature="e#6628#7041#0" expanded="false" />
+            <element signature="e#7113#7345#0" expanded="false" />
+            <element signature="e#7414#7581#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -475,7 +677,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10183">
           <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -493,9 +694,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="63" lean-forward="false" selection-start-line="56" selection-start-column="63" selection-end-line="56" selection-end-column="63" />
-          <folding>
-            <element signature="e#304#319#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -505,6 +704,18 @@
           <caret line="188" column="9" lean-forward="false" selection-start-line="188" selection-start-column="9" selection-end-line="188" selection-end-column="9" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
+            <element signature="e#1011#1851#0" expanded="false" />
+            <element signature="e#1907#2702#0" expanded="false" />
+            <element signature="e#2735#3496#0" expanded="false" />
+            <element signature="e#3536#3819#0" expanded="false" />
+            <element signature="e#3858#4193#0" expanded="false" />
+            <element signature="e#4231#4719#0" expanded="false" />
+            <element signature="e#4750#5258#0" expanded="false" />
+            <element signature="e#5339#6373#0" expanded="false" />
+            <element signature="e#6439#6541#0" expanded="false" />
+            <element signature="e#6628#7041#0" expanded="false" />
+            <element signature="e#7113#7345#0" expanded="false" />
+            <element signature="e#7414#7581#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,6 +737,18 @@
           <caret line="244" column="0" lean-forward="false" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
+            <element signature="e#1011#1851#0" expanded="false" />
+            <element signature="e#1907#2702#0" expanded="false" />
+            <element signature="e#2735#3496#0" expanded="false" />
+            <element signature="e#3536#3819#0" expanded="false" />
+            <element signature="e#3858#4193#0" expanded="false" />
+            <element signature="e#4231#4719#0" expanded="false" />
+            <element signature="e#4750#5258#0" expanded="false" />
+            <element signature="e#5339#6373#0" expanded="false" />
+            <element signature="e#6439#6541#0" expanded="false" />
+            <element signature="e#6628#7041#0" expanded="false" />
+            <element signature="e#7113#7345#0" expanded="false" />
+            <element signature="e#7414#7581#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -534,9 +757,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="43" column="11" lean-forward="false" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
-          <folding>
-            <element signature="e#304#319#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -557,6 +778,18 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
+            <element signature="e#1011#1851#0" expanded="false" />
+            <element signature="e#1907#2702#0" expanded="false" />
+            <element signature="e#2735#3496#0" expanded="false" />
+            <element signature="e#3536#3819#0" expanded="false" />
+            <element signature="e#3858#4193#0" expanded="false" />
+            <element signature="e#4231#4719#0" expanded="false" />
+            <element signature="e#4750#5258#0" expanded="false" />
+            <element signature="e#5339#6373#0" expanded="false" />
+            <element signature="e#6439#6541#0" expanded="false" />
+            <element signature="e#6628#7041#0" expanded="false" />
+            <element signature="e#7113#7345#0" expanded="false" />
+            <element signature="e#7414#7581#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -593,13 +826,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1649">
           <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/numpy/lib/npyio.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26163">
-          <caret line="1561" column="0" lean-forward="false" selection-start-line="1561" selection-start-column="0" selection-end-line="1561" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -647,16 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-          <folding>
-            <element signature="e#304#319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/pycuda/gpuarray.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
@@ -665,31 +881,67 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/graph_generator.py.notused" />
     <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/skcuda/linalg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10183">
+        <state relative-caret-position="17">
           <caret line="620" column="0" lean-forward="false" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Anaconda2/Lib/site-packages/numpy/lib/npyio.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31348">
+          <caret line="1866" column="0" lean-forward="false" selection-start-line="1866" selection-start-column="0" selection-end-line="1866" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/algo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="252" column="0" lean-forward="false" selection-start-line="252" selection-start-column="0" selection-end-line="252" selection-end-column="0" />
+        <state relative-caret-position="389">
+          <caret line="384" column="23" lean-forward="false" selection-start-line="384" selection-start-column="23" selection-end-line="384" selection-end-column="23" />
           <folding>
             <element signature="e#305#323#0" expanded="true" />
+            <element signature="e#1011#1851#0" expanded="false" />
+            <element signature="e#1907#2702#0" expanded="false" />
+            <element signature="e#2735#3496#0" expanded="false" />
+            <element signature="e#3536#3819#0" expanded="false" />
+            <element signature="e#3858#4193#0" expanded="false" />
+            <element signature="e#4231#4719#0" expanded="false" />
+            <element signature="e#4750#5258#0" expanded="false" />
+            <element signature="e#5339#6373#0" expanded="false" />
+            <element signature="e#6439#6541#0" expanded="false" />
+            <element signature="e#6628#7041#0" expanded="false" />
+            <element signature="e#7113#7345#0" expanded="false" />
+            <element signature="e#7414#7581#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/determine_R_prime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#304#319#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/graph_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="194" column="51" lean-forward="true" selection-start-line="194" selection-start-column="51" selection-end-line="194" selection-end-column="51" />
-          <folding>
-            <element signature="e#304#319#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/transform_communities.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="46" column="10" lean-forward="true" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
