@@ -1,34 +1,16 @@
-#-------------------------------------------------------------------------------
-# Name:        algo
-# Purpose:
-#
-# Author:      Milos
-#
-# Created:     26/11/2017
-# Copyright:   (c) Milos 2017
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
-
-import numpy as np
-from scipy.cluster.hierarchy import dendrogram
-from scipy.sparse import *
-from scipy.sparse import identity
-from scipy import *
-from sortedcontainers import SortedDict
-from sortedcontainers import SortedSet
-from scipy.cluster import hierarchy
+import datetime
+import sys
+import time
 from collections import defaultdict
 from collections import namedtuple
+
 import matplotlib.pyplot as plt
-import datetime
-import time
-import sys
-import numpy as np#
-#import pycuda.autoinit
-#import pycuda.gpuarray as gpuarray
-#import skcuda.linalg as linalg
-#import skcuda.misc as misc
-#import skcuda
+import numpy as np
+from scipy import *
+from scipy.cluster.hierarchy import dendrogram
+from scipy.sparse import *
+from sortedcontainers import SortedDict
+from sortedcontainers import SortedSet
 
 # special struct used for the sparse vector
 SparseVec = namedtuple('SparseVec', ['indices', 'value'])
@@ -295,9 +277,203 @@ def get_min_pair(C1, C2):
     else:
         return (C2, C1)
 
+def WalkTrap(curr_infilename, t, indir, outdir):
+    outfilename = '%s_t%s_output' % (curr_infilename, t)
+    calcfilename = '%s_t%s_calc' % (curr_infilename, t)
+    txt = '.txt'
+
+    infilename = indir + curr_infilename + txt
+    outfilename = outdir + outfilename + txt
+    calcfilename = outdir + calcfilename + txt
+
+    global outfile
+    global calcfile
+    outfile = open(outfilename, 'w')
+    calcfile = open(calcfilename, 'w')
+
+    print_no_newline('!IMPORTANT! -> t = %s\n\n' % t)
+
+    # retrieve the graph with self-edges, total number of vertices and mapping to original indices
+    (G, n, reverse_mapping) = load_graph(infilename)
+    rangen = range(n)
+    P_t = get_P_t(G, t, rangen)  # the Pt matrix from the question set and
+    Deg = dict()  # degree of each vertex
+    Ccard = dict()  # the mapping of community indices to their respective cardinality
+    CDP_t = dict()  # the mapping of community indices to their respective D^-(1/2)*P_t_C.
+    Cneig = dict()  # the mapping of community indices to their "neighbour" communities (ones who share a direct edge to them)
+    C1C2_to_sigma = dict()  # the mapping of two adjacent community indices to their respective sigma (assumed to be unique enough!)
+    unsorted_sigma_to_C1C2 = dict()  # a mapping of sigmas (updated with new values regularly)
+    merge_order = []  # a list of tuples in set merge order ((C1,C2) means C1 and C2 were merged to C1)
+
+    print_with_timestep('Calculating D and smaller things...')
+
+    for v in rangen:
+        Ccard[v] = 1.0
+        Deg[v] = len(G[v]) - 1
+        Cneig[v] = set()
+        for elem in G[v]:
+            Cneig[v].add(elem)
+        Cneig[v].remove(v)  # remove the redundant "self" element from the set
+
+    print_with_timestep('Calculating D and DP_t...')
+    D = dict()
+    for v in rangen:
+        D[v] = 1.0 / sqrt(Deg[v] + 1)
+
+    visual_counter = 0
+    for v in rangen:
+        visual_counter = increment_visual_counter(visual_counter, 0)
+        pt = P_t[v, :]
+        indexes = pt.indices
+        data = pt.data
+        CDP_t[v] = SparseVec(indices=[],
+                             value=defaultdict(lambda: 0.0))
+        for (pos, index) in enumerate(indexes):
+            CDP_t[v].indices.append(index)
+            CDP_t[v].value[index] = data[pos] * D[index]
+        CDP_t[v].indices.sort()
+
+    increment_visual_counter(visual_counter, 1)
+    print_with_timestep('Finished calculating D and DP_t...')
+
+    print_with_timestep('Explicitly delete G, P_t and Deg...')
+    # explicitly get rid of G to cut down on memory
+    for v in rangen:
+        G[v] = None
+    del G
+    del P_t
+    del Deg
+    print_with_timestep('Finished deleting G, P_t and Deg...')
+
+    print_with_timestep('Setting up the structures...')
+    visual_counter = 0
+    for C1 in rangen:
+        for C2 in Cneig[C1]:
+            visual_counter = increment_visual_counter(visual_counter, 0)
+
+            if not (C1, C2) in C1C2_to_sigma and C1 < C2:
+                sigmaC1C2 = delta_sigma_C1C2(n, Ccard[C1], Ccard[C2], CDP_t[C1], CDP_t[C2])
+                C1C2_to_sigma[(C1, C2)] = sigmaC1C2
+                if sigmaC1C2 not in unsorted_sigma_to_C1C2:
+                    unsorted_sigma_to_C1C2[sigmaC1C2] = SortedSet()
+                unsorted_sigma_to_C1C2[sigmaC1C2].add((C1, C2))
+
+    increment_visual_counter(visual_counter, 1)
+    sigma_to_C1C2 = SortedDict(
+        unsorted_sigma_to_C1C2)  # a constantly sorted mapping of sigmas (updated with new values regularly)
+
+    visual_counter = 0
+    # iterate through all merges
+    print_with_timestep('About to start the algo...')
+    rangen1 = range(n - 1)
+    for _ in rangen1:
+        visual_counter = increment_visual_counter(visual_counter, 0)
+
+        # select the minimum element in the sorted set, record and remove it
+        if len(sigma_to_C1C2.viewvalues()) == 0:
+            break
+        (C1, C2) = sigma_to_C1C2.viewvalues()[0][0]
+        sigmaC1C2 = C1C2_to_sigma[(C1, C2)]
+        merge_order.append((C1, C2, sigmaC1C2))
+        del C1C2_to_sigma[(C1, C2)]
+        del sigma_to_C1C2[sigmaC1C2][0]
+        if len(sigma_to_C1C2[sigmaC1C2]) <= 0:
+            del sigma_to_C1C2[sigmaC1C2]
+
+        # calculate the values for the new community
+        DP_t_C3 = SparseVec(indices=sorted_union(CDP_t[C1].indices, CDP_t[C2].indices),
+                            value=defaultdict(lambda: 0.0))
+        c1card = Ccard[C1]
+        c2card = Ccard[C2]
+        cardC3 = Ccard[C1] + Ccard[C2]
+        for index in DP_t_C3.indices:
+            DP_t_C3.value[index] = (c1card * CDP_t[C1].value[index] + c2card * CDP_t[C2].value[index]) / cardC3
+
+        # determine which tuples need updating and resolve maintenance things
+        updatePoints = [C1, C2]
+        oldkeyMap = dict()  # saved mapping of old keys to sigmas
+        updatePairs = set()
+        for A in updatePoints:
+            neighbours = Cneig[A]
+            for B in neighbours:
+                oldkey = get_min_pair(A, B)
+                if oldkey == (C1, C2):
+                    continue
+                newkey = oldkey
+                if A == C2:
+                    newkey = get_min_pair(C1, B)
+                remove_elem(sigma_to_C1C2, C1C2_to_sigma, oldkeyMap, oldkey)
+                if not (newkey, B) in updatePairs:
+                    updatePairs.add((newkey, B))
+                if (A == C2):
+                    Cneig[B].remove(C2)
+                    Cneig[B].add(C1)
+
+        # update the sigma mappings
+        for (newpair, C) in updatePairs:
+            newsigma = delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, sigmaC1C2, CDP_t, DP_t_C3, n)
+            add_elem(sigma_to_C1C2, C1C2_to_sigma, newpair, newsigma)
+
+        # finally update the relevant values of the sets
+        CDP_t[C1] = DP_t_C3
+        del CDP_t[C2]
+        neigC3 = Cneig[C1].union(Cneig[C2])
+        neigC3.remove(C1)
+        neigC3.remove(C2)
+        Cneig[C1] = neigC3
+        del Cneig[C2]
+        Ccard[C1] = cardC3
+        del Ccard[C2]
+
+    increment_visual_counter(visual_counter, 1)
+    print_with_timestep('Algo completed...')
+
+    print_no_newline('\n')
+    print_with_timestep('Merging order:')
+    for (idx, (a, b, sigma)) in enumerate(merge_order):
+        print_no_newline('%s: [%s, %s, %s]\n' % (idx, a, b, sigma))
+
+    # compute the optimal partitioning according to metric eta
+    sigma_prev = 0
+    max_eta = 0
+    max_iter = 0
+    for (idx, (a, b, sigma)) in enumerate(merge_order):
+        if idx == 0:
+            sigma_prev = sigma
+        else:
+            eta = sigma / sigma_prev
+            if eta > max_eta:
+                max_eta = eta
+                max_iter = idx
+            sigma_prev = sigma
+
+    sets = SortedDict()
+    for i in rangen:
+        sets[i] = SortedSet()
+        sets[i].add(reverse_mapping[i])
+
+    range_max_iter = range(max_iter)
+    for i in range_max_iter:
+        (a, b, sigma) = merge_order[i]
+        sets[a] = sets[a].union(sets[b])
+        del sets[b]
+
+    print_no_newline('\n')
+    print_with_timestep('Optimal solution (eta = %s, max_iter = %s):' % (max_eta, max_iter))
+    for idx in sets:
+        range_sets_idx = range(len(sets[idx]))
+        for i in range_sets_idx:
+            print_calcfile(str(sets[idx][i]))
+            if i < len(sets[idx]) - 1:
+                print_calcfile(' ')
+        print_calcfile('\n')
+
+    # fancy_plot(n, merge_order, reverse_mapping)
+
+    outfile.close()
+    calcfile.close()
+
 def main():
-
-
     # infilename = 'com-amazon.ungraph'
     # infilename = 'example'
     # infilename = '18-18-55_gen_graph'
@@ -364,221 +540,17 @@ def main():
     #     'nreq600_k5_alpha10_qe0.4_(n600)_gen_graph'
     # ]:#
 
-    # EUcore
+    # Example
     for curr_infilename in \
     [ \
-        'email-Eu-core' \
+        'example' \
     ]:
-
-        for t in [7, 8]:
-
-            # outfilename = '%s_output' % '{:%H-%M-%S}'.format(datetime.datetime.now())
-            # outfilename = '%s_output_%s' % (infilename, '{:%H-%M-%S}'.format(datetime.datetime.now()))
-            outfilename = '%s_t%s_output' % (curr_infilename, t)
-
-            # calcfilename = '%s_calc_%s' % ('{:%H-%M-%S}'.format(datetime.datetime.now()),infilename)
-            # calcfilename = '%s_calc_%s' % (infilename, '{:%H-%M-%S}'.format(datetime.datetime.now()))
-            calcfilename = '%s_t%s_calc' % (curr_infilename, t)
-
+        for t in range(1,8):
             outdir = 'out/'
-            #outdir = 'out/GRAPH3extra/'
+            # outdir = 'out/GRAPH3extra/'
             indir = 'in/examples/'
-            # indir = 'testing/amazon/'
-            # indir = 'testing/departments/'
             # indir = 'testing/GRAPH3extra/'
-            txt = '.txt'
-
-            infilename = indir + curr_infilename + txt
-            outfilename = outdir + outfilename + txt
-            calcfilename = outdir + calcfilename + txt
-
-            global outfile
-            global calcfile
-            outfile = open(outfilename, 'w')
-            calcfile = open(calcfilename, 'w')
-
-
-            print_no_newline('!IMPORTANT! -> t = %s\n\n' % t)
-
-            # retrieve the graph with self-edges, total number of vertices and mapping to original indices
-            (G, n, reverse_mapping) = load_graph(infilename)
-            rangen = range(n)
-            P_t = get_P_t(G, t, rangen)      # the Pt matrix from the question set and
-            Deg = dict()                     # degree of each vertex
-            Ccard = dict()                   # the mapping of community indices to their respective cardinality
-            CDP_t = dict()                   # the mapping of community indices to their respective D^-(1/2)*P_t_C.
-            Cneig = dict()                   # the mapping of community indices to their "neighbour" communities (ones who share a direct edge to them)
-            C1C2_to_sigma = dict()           # the mapping of two adjacent community indices to their respective sigma (assumed to be unique enough!)
-            unsorted_sigma_to_C1C2 = dict()  # a mapping of sigmas (updated with new values regularly)
-            merge_order = []                 # a list of tuples in set merge order ((C1,C2) means C1 and C2 were merged to C1)
-
-            print_with_timestep('Calculating D and smaller things...')
-
-            for v in rangen:
-                Ccard[v] = 1.0
-                Deg[v] = len(G[v])-1
-                Cneig[v] = set()
-                for elem in G[v]:
-                    Cneig[v].add(elem)
-                Cneig[v].remove(v) # remove the redundant "self" element from the set
-
-            print_with_timestep('Calculating D and DP_t...')
-            D = dict()
-            for v in rangen:
-                D[v] = 1.0 / sqrt(Deg[v] + 1)
-
-
-            visual_counter = 0
-            for v in rangen:
-                visual_counter = increment_visual_counter(visual_counter, 0)
-                pt = P_t[v, :]
-                indexes = pt.indices
-                data = pt.data
-                CDP_t[v] = SparseVec(indices=[],
-                                     value=defaultdict(lambda: 0.0))
-                for (pos, index) in enumerate(indexes):
-                    CDP_t[v].indices.append(index)
-                    CDP_t[v].value[index] = data[pos] * D[index]
-                CDP_t[v].indices.sort()
-
-            increment_visual_counter(visual_counter, 1)
-            print_with_timestep('Finished calculating D and DP_t...')
-
-            print_with_timestep('Explicitly delete G, P_t and Deg...')
-            # explicitly get rid of G to cut down on memory
-            for v in rangen:
-                G[v] = None
-            del G
-            del P_t
-            del Deg
-            print_with_timestep('Finished deleting G, P_t and Deg...')
-
-            print_with_timestep('Setting up the structures...')
-            visual_counter = 0
-            for C1 in rangen:
-                for C2 in Cneig[C1]:
-                    visual_counter = increment_visual_counter(visual_counter, 0)
-
-                    if not (C1, C2) in C1C2_to_sigma and C1 < C2:
-                        sigmaC1C2 = delta_sigma_C1C2(n, Ccard[C1], Ccard[C2], CDP_t[C1], CDP_t[C2])
-                        C1C2_to_sigma[(C1, C2)] = sigmaC1C2
-                        if sigmaC1C2 not in unsorted_sigma_to_C1C2:
-                            unsorted_sigma_to_C1C2[sigmaC1C2] = SortedSet()
-                        unsorted_sigma_to_C1C2[sigmaC1C2].add((C1, C2))
-
-            increment_visual_counter(visual_counter, 1)
-            sigma_to_C1C2 = SortedDict(unsorted_sigma_to_C1C2) # a constantly sorted mapping of sigmas (updated with new values regularly)
-
-            visual_counter = 0
-            # iterate through all merges
-            print_with_timestep('About to start the algo...')
-            rangen1 = range(n-1)
-            for _ in rangen1:
-                visual_counter = increment_visual_counter(visual_counter, 0)
-
-                # select the minimum element in the sorted set, record and remove it
-                if len(sigma_to_C1C2.viewvalues()) == 0:
-                    break
-                (C1, C2) = sigma_to_C1C2.viewvalues()[0][0]
-                sigmaC1C2 = C1C2_to_sigma[(C1,C2)]
-                merge_order.append((C1, C2, sigmaC1C2))
-                del C1C2_to_sigma[(C1,C2)]
-                del sigma_to_C1C2[sigmaC1C2][0]
-                if len(sigma_to_C1C2[sigmaC1C2]) <= 0:
-                    del sigma_to_C1C2[sigmaC1C2]
-
-                # calculate the values for the new community
-                DP_t_C3 = SparseVec(indices=sorted_union(CDP_t[C1].indices, CDP_t[C2].indices),
-                                    value=defaultdict(lambda: 0.0))
-                c1card = Ccard[C1]
-                c2card = Ccard[C2]
-                cardC3 = Ccard[C1] + Ccard[C2]
-                for index in DP_t_C3.indices:
-                    DP_t_C3.value[index] = (c1card*CDP_t[C1].value[index] + c2card*CDP_t[C2].value[index])/cardC3
-
-                # determine which tuples need updating and resolve maintenance things
-                updatePoints = [C1, C2]
-                oldkeyMap = dict() # saved mapping of old keys to sigmas
-                updatePairs = set()
-                for A in updatePoints:
-                    neighbours = Cneig[A]
-                    for B in neighbours:
-                        oldkey = get_min_pair(A, B)
-                        if oldkey == (C1, C2):
-                            continue
-                        newkey = oldkey
-                        if A == C2:
-                            newkey = get_min_pair(C1, B)
-                        remove_elem(sigma_to_C1C2, C1C2_to_sigma, oldkeyMap, oldkey)
-                        if not (newkey, B) in updatePairs:
-                            updatePairs.add((newkey, B))
-                        if (A == C2):
-                            Cneig[B].remove(C2)
-                            Cneig[B].add(C1)
-
-                # update the sigma mappings
-                for (newpair, C) in updatePairs:
-                    newsigma = delta_sigma_C3C(Ccard, C1, C2, C, oldkeyMap, sigmaC1C2, CDP_t, DP_t_C3, n)
-                    add_elem(sigma_to_C1C2, C1C2_to_sigma, newpair, newsigma)
-
-                # finally update the relevant values of the sets
-                CDP_t[C1] = DP_t_C3
-                del CDP_t[C2]
-                neigC3 = Cneig[C1].union(Cneig[C2])
-                neigC3.remove(C1)
-                neigC3.remove(C2)
-                Cneig[C1] = neigC3
-                del Cneig[C2]
-                Ccard[C1] = cardC3
-                del Ccard[C2]
-
-            increment_visual_counter(visual_counter, 1)
-            print_with_timestep('Algo completed...')
-
-            print_no_newline('\n')
-            print_with_timestep('Merging order:')
-            for (idx, (a, b, sigma)) in enumerate(merge_order):
-                print_no_newline('%s: [%s, %s, %s]\n' % (idx, a, b, sigma))
-
-            # compute the optimal partitioning according to metric eta
-            sigma_prev = 0
-            max_eta = 0
-            max_iter = 0
-            for (idx, (a, b, sigma)) in enumerate(merge_order):
-                if idx == 0:
-                    sigma_prev = sigma
-                else:
-                    eta = sigma/sigma_prev
-                    if eta > max_eta:
-                        max_eta = eta
-                        max_iter = idx
-                    sigma_prev = sigma
-
-            sets = SortedDict()
-            for i in rangen:
-                sets[i] = SortedSet()
-                sets[i].add(reverse_mapping[i])
-
-            range_max_iter = range(max_iter)
-            for i in range_max_iter:
-                (a, b, sigma) = merge_order[i]
-                sets[a] = sets[a].union(sets[b])
-                del sets[b]
-
-            print_no_newline('\n')
-            print_with_timestep('Optimal solution (eta = %s, max_iter = %s):' % (max_eta, max_iter))
-            for idx in sets:
-                range_sets_idx = range(len(sets[idx]))
-                for i in range_sets_idx:
-                    print_calcfile(str(sets[idx][i]))
-                    if i < len(sets[idx]) - 1:
-                        print_calcfile(' ')
-                print_calcfile('\n')
-
-            #fancy_plot(n, merge_order, reverse_mapping)
-
-            outfile.close()
-            calcfile.close()
+            WalkTrap(curr_infilename, t, indir, outdir)
 
     return
 

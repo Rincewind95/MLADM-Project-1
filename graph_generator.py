@@ -1,26 +1,11 @@
-#-------------------------------------------------------------------------------
-# Name:        algo
-# Purpose:
-#
-# Author:      Milos
-#
-# Created:     26/11/2017
-# Copyright:   (c) Milos 2017
-# Licence:     <your licence>
-#-------------------------------------------------------------------------------
-import datetime
-import numpy as np
 from networkx import Graph
-from scipy.cluster.hierarchy import dendrogram
-from scipy.sparse import *
-from scipy.sparse import identity
-from scipy import *
-from sortedcontainers import SortedDict
-from sortedcontainers import SortedSet
-from scipy.cluster import hierarchy
-import matplotlib.pyplot as plt
-import networkx as nx
 import os
+
+import networkx as nx
+from networkx import Graph
+from scipy import *
+from sortedcontainers import SortedSet
+
 
 def get_beta(Qe, dinC, k):
     top = 0

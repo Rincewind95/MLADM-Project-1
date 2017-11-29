@@ -1,15 +1,6 @@
-import datetime
-import numpy as np
-from networkx import Graph
-from scipy.cluster.hierarchy import dendrogram
-from scipy.sparse import *
-from scipy.sparse import identity
 from scipy import *
-from sortedcontainers import SortedDict
 from sortedcontainers import SortedSet
-from scipy.cluster import hierarchy
-import matplotlib.pyplot as plt
-import networkx as nx
+
 
 def input_sets(location):
     data = np.genfromtxt(location, skip_header=1, dtype=int)
